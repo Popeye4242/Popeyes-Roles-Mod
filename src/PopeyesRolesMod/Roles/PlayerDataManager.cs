@@ -6,15 +6,16 @@ using UnityEngine;
 
 namespace PopeyesRolesMod.Roles
 {
-    public static class PlayerDataManager
+    public class PlayerDataManager
     {
-        internal static Dictionary<byte, PlayerData> PlayerData = new Dictionary<byte, PlayerData>();
-        public static bool RoundStarted { get; set; } = false;
-        public static bool IsSabotageActive { get; internal set; } = false;
-        public static PlayerControl ShieldedPlayer { get; set; }
+        internal Dictionary<byte, PlayerData> PlayerData = new Dictionary<byte, PlayerData>();
+        public bool IsSabotageActive { get; internal set; } = false;
+        public PlayerControl ShieldedPlayer { get; set; }
+        public static PlayerDataManager Instance { get; internal set; }
+        public static bool RoundStarted => Instance != null;
         public static void SetPlayerRole(byte playerId, Role role)
         {
-            var playerData = PlayerData[playerId] = new PlayerData();
+            var playerData = Instance.PlayerData[playerId] = new PlayerData();
             playerData.Role = role;
         }
 

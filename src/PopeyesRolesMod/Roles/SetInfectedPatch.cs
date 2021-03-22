@@ -15,20 +15,26 @@ namespace PopeyesRolesMod.Roles
 
         public static void Postfix()
         {
-            Dictionary<Role, Team> roles = new Dictionary<Role, Team>()
+            Dictionary<Role, (Team Team, int SpawnChance)> roles = new Dictionary<Role, (Team Team, int SpawnChance)>()
             {
-                { Role.Sheriff, Team.Crewmate },
-                { Role.Jester, Team.Neutral },
-                { Role.Medic, Team.Crewmate},
-                { Role.Engineer, Team.Crewmate },
-                //{ Role.Morphling, Team.Impostor}
-            };
+                { Role.Sheriff, (Team.Crewmate, SpawnChance: 100) },
+                { Role.Jester, (Team.Neutral, SpawnChance: 100) },
+                { Role.Medic, (Team.Crewmate, SpawnChance: 0)},
+                { Role.Engineer, (Team.Crewmate, SpawnChance: 0) },
+                { Role.Morphling, (Team.Impostor, SpawnChance: 0)}
+             };
 
             var data = new InitializeRoundData();
 
-            foreach (var role in roles)
+            for (int i = 0; i < roles.Count; i++)
             {
-                if (role.Value == Team.Impostor)
+                var role = roles.ElementAt(s_rand.Next(0, roles.Count - i));
+                roles.Remove(role.Key);
+                
+                if (s_rand.Next(0, 100) > role.Value.SpawnChance)
+                    continue;
+
+                if (role.Value.Team == Team.Impostor)
                 {
                     var impostors = PlayerDataManager.GetImpostors().Where(x => !data.Roles.ContainsKey(x.PlayerId));
                     if (impostors.Any())

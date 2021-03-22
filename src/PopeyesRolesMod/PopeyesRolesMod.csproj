@@ -54,7 +54,6 @@
 
   <ItemGroup>
     <Folder Include="Roles\Impostor\" />
-    <Folder Include="Roles\Jester\" />
     <Folder Include="Roles\Crewmate\" />
   </ItemGroup>
 

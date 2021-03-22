@@ -18,12 +18,9 @@ namespace PopeyesRolesMod.Roles.Engineer
 
         private static void Button_OnUpdate(object sender, EventArgs e)
         {
-            if (!PlayerControl.LocalPlayer.infectedSet)
-            {
-                Button.Visible = false;
+            Button.Visible = PlayerDataManager.RoundStarted && PlayerControl.LocalPlayer.HasPlayerRole(Role.Engineer);
+            if (!Button.Visible)
                 return;
-            }
-            Button.Visible = PlayerControl.LocalPlayer.HasPlayerRole(Role.Engineer);
         }
 
         private static void Button_OnClick(object sender, System.ComponentModel.CancelEventArgs e)

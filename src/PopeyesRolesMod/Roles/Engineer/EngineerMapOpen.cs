@@ -14,7 +14,7 @@ namespace PopeyesRolesMod.Roles.Engineer
             if (!__instance.IsOpen || !__instance.infectedOverlay.gameObject.active)
                 return;
             __instance.ColorControl.baseColor =
-                !PlayerDataManager.IsSabotageActive ? Color.gray : Colors.EngineerColor;
+                !PlayerDataManager.Instance.IsSabotageActive ? Color.gray : Colors.EngineerColor;
 
             var playerData = PlayerControl.LocalPlayer.GetPlayerData();
             var perc = playerData.UsedAbility ? 1f : 0f;
@@ -23,7 +23,7 @@ namespace PopeyesRolesMod.Roles.Engineer
             {
                 if (room.special == null)
                     continue;
-                room.special.material.SetFloat("_Desat", !PlayerDataManager.IsSabotageActive ? 1f : 0f);
+                room.special.material.SetFloat("_Desat", !PlayerDataManager.Instance.IsSabotageActive ? 1f : 0f);
 
                 room.special.enabled = true;
                 room.special.gameObject.SetActive(true);

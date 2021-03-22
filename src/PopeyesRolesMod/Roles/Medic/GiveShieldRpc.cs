@@ -16,7 +16,7 @@ namespace PopeyesRolesMod.Roles.Medic
         public override void Handle(PlayerControl innerNetObject, byte protectedId)
         {
             var shieldedPlayer = PlayerDataManager.GetPlayerById(protectedId);
-            PlayerDataManager.ShieldedPlayer = shieldedPlayer;
+            PlayerDataManager.Instance.ShieldedPlayer = shieldedPlayer;
             if (shieldedPlayer.AmOwner || PlayerControl.LocalPlayer.HasPlayerRole(Role.Medic))
             {
                 shieldedPlayer.gameObject.AddComponent<ShieldBehaviour>();

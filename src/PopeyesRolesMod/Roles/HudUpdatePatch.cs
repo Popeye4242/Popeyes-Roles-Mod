@@ -31,7 +31,7 @@ namespace PopeyesRolesMod.Roles
             foreach (var task in PlayerControl.LocalPlayer.myTasks)
                 if (sabotageTasks.Contains(task.TaskType))
                     sabotageActive = true;
-            PlayerDataManager.IsSabotageActive = sabotageActive;
+            PlayerDataManager.Instance.IsSabotageActive = sabotageActive;
         }
     }
 }

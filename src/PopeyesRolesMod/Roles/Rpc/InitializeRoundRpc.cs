@@ -19,14 +19,12 @@ namespace PopeyesRolesMod.Roles.Rpc
 
         public override void Handle(PlayerControl innerNetObject, InitializeRoundData data)
         {
-            // prevent game from updating while this gets executed
-            PlayerDataManager.PlayerData.Clear();
+            PlayerDataManager.Instance = new PlayerDataManager();
             foreach (var role in data.Roles)
             {
                 System.Console.WriteLine("Assigned {0} to player {1}({2})", role.Value, PlayerDataManager.GetPlayerById(role.Key).name, role.Key);
                 PlayerDataManager.SetPlayerRole(role.Key, role.Value);
             }
-            PlayerDataManager.RoundStarted = true;
         }
 
         public override InitializeRoundData Read(MessageReader reader)
