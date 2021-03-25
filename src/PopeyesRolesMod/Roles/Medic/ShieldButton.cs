@@ -8,22 +8,25 @@ namespace PopeyesRolesMod.Roles.Medic
 {
     public static class ShieldButton
     {
-        public static CooldownButton Button { get; private set; }
+        public static GameplayButton Button { get; private set; }
+        static bool lastQ = false;
 
         public static void CreateButton()
         {
-            Button = new CooldownButton(PopeyesRolesModPlugin.Assets.MedicShieldButton, new Vector2(PopeyesRolesModPlugin.KillButtonPosition, 0F));
+            Button = new GameplayButton(PopeyesRolesModPlugin.Assets.MedicShieldButton, new HudPosition(GameplayButton.OffsetX, 0, HudAlignment.BottomRight));
             Button.OnClick += Button_OnClick;
             Button.OnUpdate += Button_OnUpdate;
         }
 
         private static void Button_OnUpdate(object sender, EventArgs e)
         {
-            Button.Visible = PlayerDataManager.RoundStarted && PlayerControl.LocalPlayer.HasPlayerRole(Role.Medic);
-            if (!Button.Visible)
-                return;
-
+            Button.Visible=PlayerControl.LocalPlayer.HasPlayerRole(Role.Medic);
             Button.Clickable = PlayerControl.LocalPlayer.FindClosestPlayer();
+
+            lastQ = Input.GetKeyUp(KeyCode.Q);
+
+            if (Input.GetKeyDown(KeyCode.Q) && !lastQ && Button.IsUsable)
+                Button.PerformClick();
         }
 
 

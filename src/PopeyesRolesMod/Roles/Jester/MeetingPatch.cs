@@ -15,7 +15,6 @@ namespace PopeyesRolesMod.Roles.Jester
 
             if (!(ExileController.Instance?.exiled?._object.HasPlayerRole(Role.Jester) ?? false))
                 return;
-            System.Console.WriteLine("Joker won");
             Rpc<JesterWinRpc>.Instance.Send(data: true, immediately: true);
 
         }

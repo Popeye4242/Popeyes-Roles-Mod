@@ -10,20 +10,23 @@ namespace PopeyesRolesMod.Roles.Sheriff
     {
         public static CooldownButton Button { get; private set; }
 
+        static bool lastQ = false;
         public static void CreateButton()
         {
-            Button = new CooldownButton(PopeyesRolesModPlugin.Assets.SheriffKillButton, new Vector2(PopeyesRolesModPlugin.KillButtonPosition, 0F));
+            Button = new CooldownButton(PopeyesRolesModPlugin.Assets.SheriffKillButton, new HudPosition(GameplayButton.OffsetX, 0, HudAlignment.BottomRight), 30f, 0f, 10f);
             Button.OnClick += Button_OnClick;
             Button.OnUpdate += Button_OnUpdate;
         }
 
         private static void Button_OnUpdate(object sender, EventArgs e)
         {
-            Button.Visible = PlayerDataManager.RoundStarted && PlayerControl.LocalPlayer.HasPlayerRole(Role.Sheriff);
-            if (!Button.Visible)
-                return;
-
+            Button.Visible = PlayerControl.LocalPlayer.HasPlayerRole(Role.Sheriff);
             Button.Clickable = PlayerControl.LocalPlayer.FindClosestPlayer();
+
+            lastQ = Input.GetKeyUp(KeyCode.Q);
+
+            if (Input.GetKeyDown(KeyCode.Q) && !lastQ && Button.IsUsable)
+                Button.PerformClick();
         }
 
 

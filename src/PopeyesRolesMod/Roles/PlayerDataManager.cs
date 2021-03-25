@@ -8,11 +8,29 @@ namespace PopeyesRolesMod.Roles
 {
     public class PlayerDataManager
     {
+        private List<TaskTypes> sabotageTasks = new List<TaskTypes>
+        {
+            TaskTypes.FixComms,
+            TaskTypes.FixLights,
+            TaskTypes.ResetReactor,
+            TaskTypes.ResetSeismic,
+            TaskTypes.RestoreOxy
+        };
+
         internal Dictionary<byte, PlayerData> PlayerData = new Dictionary<byte, PlayerData>();
-        public bool IsSabotageActive { get; internal set; } = false;
+        public PlayerTask CurrentSabotage
+        {
+            get
+            {
+                foreach (var task in PlayerControl.LocalPlayer.myTasks)
+                    if (sabotageTasks.Contains(task.TaskType))
+                        return task;
+                return null;
+            }
+
+        }
         public PlayerControl ShieldedPlayer { get; set; }
         public static PlayerDataManager Instance { get; internal set; }
-        public static bool RoundStarted => Instance != null;
         public static void SetPlayerRole(byte playerId, Role role)
         {
             var playerData = Instance.PlayerData[playerId] = new PlayerData();

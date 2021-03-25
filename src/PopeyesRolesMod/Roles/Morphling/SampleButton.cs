@@ -7,28 +7,31 @@ namespace PopeyesRolesMod.Roles.Morphling
 {
     public static class SampleButton
     {
-        public static CooldownButton Button { get; private set; }
+        private static bool lastF = false;
+        public static GameplayButton Button { get; private set; }
 
         public static void CreateButton()
         {
-            Button = new CooldownButton(PopeyesRolesModPlugin.Assets.MorphlingSampleButton, new Vector2(PopeyesRolesModPlugin.KillButtonPosition, 1.3f));
-            Button.OnClick += Button_OnClick;
+            Button = new GameplayButton(PopeyesRolesModPlugin.Assets.MorphlingSampleButton, new HudPosition(GameplayButton.OffsetX, 1.5f, HudAlignment.BottomRight));
+            Button.OnClick += Button_OnClick_Sample;
             Button.OnUpdate += Button_OnUpdate;
         }
 
         private static void Button_OnUpdate(object sender, EventArgs e)
         {
-            if (!PlayerControl.LocalPlayer.infectedSet)
-            {
-                Button.Visible = false;
-                return;
-            }
-            Button.Visible = PlayerControl.LocalPlayer.HasPlayerRole(Role.Morphling);
+            Button.Visible = PlayerControl.LocalPlayer.HasPlayerRole(Role.Morphling) && !(PlayerControl.LocalPlayer.GetPlayerData()?.SampledPlayer);
+            Button.Clickable = PlayerControl.LocalPlayer.FindClosestPlayer();
+
+            lastF = Input.GetKeyUp(KeyCode.F);
+
+            if (Input.GetKeyDown(KeyCode.F) && !lastF && Button.IsUsable)
+                Button.PerformClick();
         }
 
-        private static void Button_OnClick(object sender, System.ComponentModel.CancelEventArgs e)
+        private static void Button_OnClick_Sample(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            Button.UpdateSprite(PopeyesRolesModPlugin.Assets.MorphlingMorphButton);
+            var sampledPlayer = PlayerControl.LocalPlayer.FindClosestPlayer();
+            PlayerControl.LocalPlayer.GetPlayerData().SampledPlayer = sampledPlayer;
         }
     }
 }

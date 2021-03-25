@@ -14,8 +14,7 @@ namespace PopeyesRolesMod
     [BepInDependency(ReactorPlugin.Id)]
     public partial class PopeyesRolesModPlugin : BasePlugin
     {
-        public const string Id = "dev.kynet.hollowmod";
-        public const float KillButtonPosition = 6.5f;
+        public const string Id = "dev.kynet.popeyesrolesmod";
 
         public Harmony Harmony { get; }
 

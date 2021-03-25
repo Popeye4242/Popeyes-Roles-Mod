@@ -11,6 +11,7 @@ namespace PopeyesRolesMod
             Roles.Engineer.RepairButton.CreateButton();
             Roles.Medic.ShieldButton.CreateButton();
             Roles.Morphling.SampleButton.CreateButton();
+            Roles.Morphling.MorphButton.CreateButton();
             Roles.Sheriff.ShootButton.CreateButton();
         }
     }

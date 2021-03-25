@@ -12,26 +12,9 @@ namespace PopeyesRolesMod.Roles
             if (!ShipStatus.Instance)
                 return;
             
-            UpdateIsSabotageActive();
+            
         }
 
 
-        private static void UpdateIsSabotageActive()
-        {
-            var sabotageTasks = new List<TaskTypes>()
-            {
-                TaskTypes.FixComms,
-                TaskTypes.FixLights,
-                TaskTypes.ResetReactor,
-                TaskTypes.ResetSeismic,
-                TaskTypes.RestoreOxy
-            };
-
-            var sabotageActive = false;
-            foreach (var task in PlayerControl.LocalPlayer.myTasks)
-                if (sabotageTasks.Contains(task.TaskType))
-                    sabotageActive = true;
-            PlayerDataManager.Instance.IsSabotageActive = sabotageActive;
-        }
     }
 }
