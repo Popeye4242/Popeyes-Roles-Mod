@@ -14,7 +14,7 @@ namespace PopeyesRolesMod.Roles.Engineer
 
             canUse = false;
             couldUse = false;
-            if (pc.HasPlayerRole(Role.Engineer) || pc.IsImpostor)
+            if (pc.HasPlayerRole(Role.Engineer) || (pc.IsImpostor && !pc.HasPlayerRole(Role.Morphling)))
             {
                 var vent = __instance;
                 float num = float.MaxValue;
