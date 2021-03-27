@@ -17,7 +17,7 @@ namespace PopeyesRolesMod.Roles.Detective
         {
             var shieldedPlayer = PlayerDataManager.GetPlayerById(protectedId);
             PlayerDataManager.Instance.ShieldedPlayer = shieldedPlayer;
-            if (shieldedPlayer.AmOwner || PlayerControl.LocalPlayer.HasPlayerRole(Role.Detective))
+            if ((shieldedPlayer.AmOwner && PlayerDataManager.Instance.Config.DetectiveShieldedPlayerSeesShield) || PlayerControl.LocalPlayer.HasPlayerRole(Role.Detective))
             {
                 shieldedPlayer.gameObject.AddComponent<ShieldBehaviour>();
             }
