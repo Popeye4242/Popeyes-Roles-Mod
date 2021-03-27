@@ -30,7 +30,7 @@ The Hunter is a role for the crewmate team. The objective is to kill the Jester 
 _____
 - Player Speed: 1.25
 - Kill Cooldown: 22.5s
-- Hunter Kill Cooldown: 22.5s
+- Hunter Kill Cooldown: 20.0s
 - Shape Shifter Morph Cooldown: 20s
 - Shape Shifter Morph Duration: 10s (cooldown does not go down while the shape shifter is disguised)
  
@@ -38,7 +38,7 @@ _____
 
 - Player Speed: 1.00
 - Kill Cooldown: 30s
-- Hunter Kill Cooldown: 30s
+- Hunter Kill Cooldown: 27.5s
 - Shape Shifter Morph Cooldown: 25s
 - Shape Shifter Morph Duration: 10s (cooldown does not go down while the shape shifter is disguised)
 
