@@ -20,20 +20,13 @@
   
   <ItemGroup>
     <Deobfuscate Include="$(AmongUs)\BepInEx\plugins\Reactor-$(GameVersion).dll" />
+    <Deobfuscate Include="$(AmongUs)\BepInEx\plugins\Essentials-$(GameVersion).dll" />
 
     <PackageReference Include="Reactor.OxygenFilter.MSBuild" Version="0.2.9">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-
-
-  <ItemGroup>
-    <Reference Include="Essentials">
-      <HintPath>$(AmongUs)\BepInEx\plugins\Essentials-$(GameVersion).dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
