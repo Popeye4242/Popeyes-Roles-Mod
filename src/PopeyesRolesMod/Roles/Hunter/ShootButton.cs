@@ -13,6 +13,10 @@ namespace PopeyesRolesMod.Roles.Hunter
         static bool lastQ = false;
         public static void CreateButton()
         {
+            if (Button != null)
+            {
+                Button.Dispose();
+            }
             Button = new CooldownButton(PopeyesRolesModPlugin.Assets.HunterKillButton, new HudPosition(GameplayButton.OffsetX, 0, HudAlignment.BottomRight), 30f, 0f, 10f);
             Button.OnClick += Button_OnClick;
             Button.OnUpdate += Button_OnUpdate;

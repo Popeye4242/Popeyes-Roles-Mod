@@ -20,6 +20,15 @@ namespace PopeyesRolesMod.Roles.Rpc
         public override void Handle(PlayerControl innerNetObject, InitializeRoundData data)
         {
             PlayerDataManager.Instance = new PlayerDataManager();
+            PlayerDataManager.Instance.Config = PluginSingleton<PopeyesRolesModPlugin>.Instance.CreateConfig();
+
+            Engineer.RepairButton.CreateButton();
+            Detective.ShieldButton.CreateButton();
+            ShapeShifter.SampleButton.CreateButton();
+            ShapeShifter.MorphButton.CreateButton();
+            Hunter.ShootButton.CreateButton();
+
+
             foreach (var role in data.Roles)
             {
                 PlayerDataManager.SetPlayerRole(role.Key, role.Value);

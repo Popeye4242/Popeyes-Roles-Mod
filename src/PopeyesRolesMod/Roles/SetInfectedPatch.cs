@@ -19,9 +19,9 @@ namespace PopeyesRolesMod.Roles
             {
                 { Role.Hunter, (Team.Crewmate, SpawnChance: 100) },
                 { Role.Jester, (Team.Neutral, SpawnChance: 100) },
-                { Role.Detective, (Team.Crewmate, SpawnChance: 0)},
-                { Role.Engineer, (Team.Crewmate, SpawnChance: 0) },
-                { Role.ShapeShifter, (Team.Impostor, SpawnChance: 0)}
+                { Role.Detective, (Team.Crewmate, SpawnChance: 100)},
+                { Role.Engineer, (Team.Crewmate, SpawnChance: 100) },
+                { Role.ShapeShifter, (Team.Impostor, SpawnChance: 100)}
              };
 
             var data = new InitializeRoundData();

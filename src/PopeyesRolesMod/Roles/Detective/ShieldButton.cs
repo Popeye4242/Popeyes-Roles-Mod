@@ -13,6 +13,10 @@ namespace PopeyesRolesMod.Roles.Detective
 
         public static void CreateButton()
         {
+            if (Button != null)
+            {
+                Button.Dispose();
+            }
             Button = new GameplayButton(PopeyesRolesModPlugin.Assets.DetectiveShieldButton, new HudPosition(GameplayButton.OffsetX, 0, HudAlignment.BottomRight));
             Button.OnClick += Button_OnClick;
             Button.OnUpdate += Button_OnUpdate;

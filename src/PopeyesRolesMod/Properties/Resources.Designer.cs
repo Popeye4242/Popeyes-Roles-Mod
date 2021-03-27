@@ -70,6 +70,15 @@ namespace PopeyesRolesMod.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Detective Options ähnelt.
+        /// </summary>
+        internal static string DetectiveOptions {
+            get {
+                return ResourceManager.GetString("DetectiveOptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Detective ähnelt.
         /// </summary>
         internal static string DetectiveRoleName {
@@ -88,6 +97,15 @@ namespace PopeyesRolesMod.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Engineer Options ähnelt.
+        /// </summary>
+        internal static string EngineerOptions {
+            get {
+                return ResourceManager.GetString("EngineerOptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Engineer ähnelt.
         /// </summary>
         internal static string EngineerRoleName {
@@ -102,6 +120,24 @@ namespace PopeyesRolesMod.Properties {
         internal static string HunterImpostorText {
             get {
                 return ResourceManager.GetString("HunterImpostorText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Kill Cooldown ähnelt.
+        /// </summary>
+        internal static string HunterKillCooldown {
+            get {
+                return ResourceManager.GetString("HunterKillCooldown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Hunter Options ähnelt.
+        /// </summary>
+        internal static string HunterOptions {
+            get {
+                return ResourceManager.GetString("HunterOptions", resourceCulture);
             }
         }
         
@@ -134,6 +170,15 @@ namespace PopeyesRolesMod.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Jester Options ähnelt.
+        /// </summary>
+        internal static string JesterOptions {
+            get {
+                return ResourceManager.GetString("JesterOptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Jester ähnelt.
         /// </summary>
         internal static string JesterRoleName {
@@ -153,11 +198,65 @@ namespace PopeyesRolesMod.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Morph Cooldown ähnelt.
+        /// </summary>
+        internal static string ShapeShifterMorphCooldown {
+            get {
+                return ResourceManager.GetString("ShapeShifterMorphCooldown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Morph Duration ähnelt.
+        /// </summary>
+        internal static string ShapeShifterMorphDuration {
+            get {
+                return ResourceManager.GetString("ShapeShifterMorphDuration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Shape Shifter Options ähnelt.
+        /// </summary>
+        internal static string ShapeShifterOptions {
+            get {
+                return ResourceManager.GetString("ShapeShifterOptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Shape Shifter ähnelt.
         /// </summary>
         internal static string ShapeShifterRoleName {
             get {
                 return ResourceManager.GetString("ShapeShifterRoleName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Sample Cooldown ähnelt.
+        /// </summary>
+        internal static string ShapeShifterSampleCooldown {
+            get {
+                return ResourceManager.GetString("ShapeShifterSampleCooldown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Shielded Player Sees Shield ähnelt.
+        /// </summary>
+        internal static string ShieldedPlayerSeesShield {
+            get {
+                return ResourceManager.GetString("ShieldedPlayerSeesShield", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Spawn Chance ähnelt.
+        /// </summary>
+        internal static string SpawnChance {
+            get {
+                return ResourceManager.GetString("SpawnChance", resourceCulture);
             }
         }
     }

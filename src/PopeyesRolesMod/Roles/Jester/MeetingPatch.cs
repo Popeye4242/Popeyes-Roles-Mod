@@ -13,6 +13,11 @@ namespace PopeyesRolesMod.Roles.Jester
             if (ExileController.Instance == null || obj != ExileController.Instance.gameObject)
                 return;
 
+            if (PlayerControl.LocalPlayer.HasPlayerRole(Role.ShapeShifter))
+            {
+                PlayerControl.LocalPlayer.GetPlayerData().SampledPlayer = null;
+            }
+
             if (!(ExileController.Instance?.exiled?._object.HasPlayerRole(Role.Jester) ?? false))
                 return;
             Rpc<JesterWinRpc>.Instance.Send(data: true, immediately: true);

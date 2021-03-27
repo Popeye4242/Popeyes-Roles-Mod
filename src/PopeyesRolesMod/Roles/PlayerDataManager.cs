@@ -18,6 +18,7 @@ namespace PopeyesRolesMod.Roles
         };
 
         internal Dictionary<byte, PlayerData> PlayerData = new Dictionary<byte, PlayerData>();
+        public LobbyConfig Config { get; set; }
         public PlayerTask CurrentSabotage
         {
             get

@@ -148,8 +148,41 @@
   <data name="HunterRoleName" xml:space="preserve">
     <value>Hunter</value>
   </data>
+  <data name="DetectiveOptions" xml:space="preserve">
+    <value>Detective Options</value>
+  </data>
+  <data name="EngineerOptions" xml:space="preserve">
+    <value>Engineer Options</value>
+  </data>
+  <data name="HunterKillCooldown" xml:space="preserve">
+    <value>Kill Cooldown</value>
+  </data>
+  <data name="HunterOptions" xml:space="preserve">
+    <value>Hunter Options</value>
+  </data>
   <data name="JesterFakeTasks" xml:space="preserve">
     <value>[D09BD9FF]Fake Tasks
 [D09BD9FF]Get Voted Out</value>
+  </data>
+  <data name="JesterOptions" xml:space="preserve">
+    <value>Jester Options</value>
+  </data>
+  <data name="ShapeShifterMorphCooldown" xml:space="preserve">
+    <value>Morph Cooldown</value>
+  </data>
+  <data name="ShapeShifterMorphDuration" xml:space="preserve">
+    <value>Morph Duration</value>
+  </data>
+  <data name="ShapeShifterOptions" xml:space="preserve">
+    <value>Shape Shifter Options</value>
+  </data>
+  <data name="ShapeShifterSampleCooldown" xml:space="preserve">
+    <value>Sample Cooldown</value>
+  </data>
+  <data name="ShieldedPlayerSeesShield" xml:space="preserve">
+    <value>Shielded Player Sees Shield</value>
+  </data>
+  <data name="SpawnChance" xml:space="preserve">
+    <value>Spawn Chance</value>
   </data>
 </root>

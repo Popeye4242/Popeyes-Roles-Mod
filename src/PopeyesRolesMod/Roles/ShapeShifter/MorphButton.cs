@@ -13,7 +13,12 @@ namespace PopeyesRolesMod.Roles.ShapeShifter
 
         public static void CreateButton()
         {
-            Button = new CooldownButton(PopeyesRolesModPlugin.Assets.ShapeShifterMorphButton, new HudPosition(GameplayButton.OffsetX, 1.5f, HudAlignment.BottomRight), 20f, 5f, 0f);
+            if (Button != null)
+            {
+                Button.Dispose();
+            }
+            var cfg = PlayerDataManager.Instance.Config;
+            Button = new CooldownButton(PopeyesRolesModPlugin.Assets.ShapeShifterMorphButton, new HudPosition(GameplayButton.OffsetX, 1.5f, HudAlignment.BottomRight), cfg.ShapeShifterMorphCooldown, cfg.ShapeShifterMorphDuration, 0f);
             Button.EffectStarted += Button_EffectStarted_Morph;
             Button.EffectEnded += Button_EffectEnded_Morph;
             Button.OnUpdate += Button_OnUpdate;

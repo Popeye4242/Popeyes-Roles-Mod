@@ -27,8 +27,7 @@ namespace PopeyesRolesMod
         public override void Load()
         {
             LoadAssets();
-            CreateButtons();
-            CreateConfig();
+            CreateOptions();
 
             CustomOption.ShamelessPlug = false;
             RegisterInIl2CppAttribute.Register();

@@ -20,23 +20,26 @@ namespace PopeyesRolesMod.Roles
         private static void UpdateJesterTasks()
         {
             var roles = new Dictionary<Role, Color>()
-            {
+            { 
                 { Role.Engineer, Colors.EngineerColor },
                 { Role.Detective, Colors.DetectiveColor },
                 { Role.Jester, Colors.JesterColor },
                 { Role.Hunter, Colors.HunterColor}
             };
-            var player = PlayerControl.LocalPlayer;
-            if (roles.TryGetValue(player.GetPlayerData().Role, out var color))
+            foreach (var player in PlayerControl.AllPlayerControls)
             {
-                player.nameText.Color = color;
-                if (MeetingHud.Instance != null)
+                var canSeeColor = player.AmOwner || PlayerControl.LocalPlayer.Data.IsDead;
+                if (canSeeColor && roles.TryGetValue(player.GetPlayerData().Role, out var color))
                 {
-                    foreach (PlayerVoteArea playerVoteArea in MeetingHud.Instance.playerStates)
+                    player.nameText.Color = color;
+                    if (MeetingHud.Instance != null)
                     {
-                        if (playerVoteArea.NameText != null && player.PlayerId == playerVoteArea.TargetPlayerId)
+                        foreach (PlayerVoteArea playerVoteArea in MeetingHud.Instance.playerStates)
                         {
-                            playerVoteArea.NameText.Color = color;
+                            if (playerVoteArea.NameText != null && player.PlayerId == playerVoteArea.TargetPlayerId)
+                            {
+                                playerVoteArea.NameText.Color = color;
+                            }
                         }
                     }
                 }
