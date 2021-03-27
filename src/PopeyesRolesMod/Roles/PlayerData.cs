@@ -10,6 +10,6 @@ namespace PopeyesRolesMod.Roles
         public Role Role { get; set; }
         public PlayerControl SampledPlayer { get; set; }
         public bool UsedAbility { get; internal set; }
-        public List<DeadPlayer> DeadPlayers { get; set; }
+        public List<DeadPlayer> DeadPlayers { get; set; } = new List<DeadPlayer>();
     }
 }

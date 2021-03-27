@@ -13,11 +13,13 @@ namespace PopeyesRolesMod.Roles.Hunter
         static bool lastQ = false;
         public static void CreateButton()
         {
+            var cfg = PlayerDataManager.Instance.Config;
             if (Button != null)
             {
-                Button.Dispose();
+                Button.CooldownDuration = cfg.HunterKillCooldown;
+                return;
             }
-            Button = new CooldownButton(PopeyesRolesModPlugin.Assets.HunterKillButton, new HudPosition(GameplayButton.OffsetX, 0, HudAlignment.BottomRight), 30f, 0f, 10f);
+            Button = new CooldownButton(PopeyesRolesModPlugin.Assets.HunterKillButton, new HudPosition(GameplayButton.OffsetX, 0, HudAlignment.BottomRight), cfg.HunterKillCooldown, 0f, 10f);
             Button.OnClick += Button_OnClick;
             Button.OnUpdate += Button_OnUpdate;
         }
@@ -26,6 +28,11 @@ namespace PopeyesRolesMod.Roles.Hunter
         {
             Button.Visible = PlayerControl.LocalPlayer.HasPlayerRole(Role.Hunter);
             Button.Clickable = PlayerControl.LocalPlayer.FindClosestTarget();
+
+            if (!Button.Visible)
+                return;
+
+            HudManager.Instance.KillButton.SetTarget(PlayerControl.LocalPlayer.FindClosestTarget());   
 
             lastQ = Input.GetKeyUp(KeyCode.Q);
 

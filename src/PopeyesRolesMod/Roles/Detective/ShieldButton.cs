@@ -13,10 +13,6 @@ namespace PopeyesRolesMod.Roles.Detective
 
         public static void CreateButton()
         {
-            if (Button != null)
-            {
-                Button.Dispose();
-            }
             Button = new GameplayButton(PopeyesRolesModPlugin.Assets.DetectiveShieldButton, new HudPosition(GameplayButton.OffsetX, 0, HudAlignment.BottomRight));
             Button.OnClick += Button_OnClick;
             Button.OnUpdate += Button_OnUpdate;
@@ -24,8 +20,13 @@ namespace PopeyesRolesMod.Roles.Detective
 
         private static void Button_OnUpdate(object sender, EventArgs e)
         {
-            Button.Visible=PlayerControl.LocalPlayer.HasPlayerRole(Role.Detective);
+            Button.Visible = PlayerControl.LocalPlayer.HasPlayerRole(Role.Detective) && !PlayerControl.LocalPlayer.GetPlayerData().UsedAbility;
             Button.Clickable = PlayerControl.LocalPlayer.FindClosestTarget();
+
+            if (!Button.Visible)
+                return;
+
+            HudManager.Instance.KillButton.SetTarget(PlayerControl.LocalPlayer.FindClosestTarget());
 
             lastQ = Input.GetKeyUp(KeyCode.Q);
 
@@ -39,6 +40,7 @@ namespace PopeyesRolesMod.Roles.Detective
             PlayerControl target = PlayerControl.LocalPlayer.FindClosestTarget();
             if (!target)
                 return;
+            PlayerControl.LocalPlayer.GetPlayerData().UsedAbility = true;
             Rpc<GiveShieldRpc>.Instance.Send(target.PlayerId, immediately: true);
         }
     }

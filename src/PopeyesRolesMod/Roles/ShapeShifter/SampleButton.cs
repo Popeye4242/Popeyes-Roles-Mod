@@ -9,15 +9,16 @@ namespace PopeyesRolesMod.Roles.ShapeShifter
     public static class SampleButton
     {
         private static bool lastF = false;
-        public static GameplayButton Button { get; private set; }
+        public static CooldownButton Button { get; private set; }
 
         public static void CreateButton()
         {
             if (Button != null)
             {
-                Button.Dispose();
+                Button.CooldownDuration = PlayerDataManager.Instance.Config.ShapeShifterSampleCooldown;
+                return;
             }
-            Button = new CooldownButton(PopeyesRolesModPlugin.Assets.ShapeShifterSampleButton, new HudPosition(GameplayButton.OffsetX, 1.5f, HudAlignment.BottomRight), PlayerDataManager.Instance.Config.ShapeShifterSampleCooldown, 0f, 0f);
+            Button = new CooldownButton(PopeyesRolesModPlugin.Assets.ShapeShifterSampleButton, new HudPosition(GameplayButton.OffsetX, 1.3f, HudAlignment.BottomRight), PlayerDataManager.Instance.Config.ShapeShifterSampleCooldown, 0f, 0f);
             Button.OnClick += Button_OnClick_Sample;
             Button.OnUpdate += Button_OnUpdate;
         }

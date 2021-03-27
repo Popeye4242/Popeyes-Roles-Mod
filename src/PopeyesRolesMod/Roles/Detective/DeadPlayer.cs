@@ -7,9 +7,8 @@ namespace PopeyesRolesMod.Roles.Detective
     public class DeadPlayer
     {
         public PlayerControl Player { get; set; }
-        public bool Suicide { get; set; }
-        public bool WasKilledByShapeShifter { get; set; }
-        public bool DidMurdererVent { get; set; }
-        public PlayerControl Murderer { get; internal set; }
+        public PlayerControl Murderer { get; set; }
+        public List<string> DeathDetails { get; } = new List<string>();
+        public DateTime Timestamp { get; } = DateTime.UtcNow;
     }
 }

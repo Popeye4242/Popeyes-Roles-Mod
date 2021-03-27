@@ -28,7 +28,6 @@ namespace PopeyesRolesMod.Roles.Rpc
             ShapeShifter.MorphButton.CreateButton();
             Hunter.ShootButton.CreateButton();
 
-
             foreach (var role in data.Roles)
             {
                 PlayerDataManager.SetPlayerRole(role.Key, role.Value);

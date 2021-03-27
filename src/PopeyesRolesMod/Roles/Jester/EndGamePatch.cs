@@ -10,10 +10,10 @@ namespace PopeyesRolesMod.Roles.Jester
     [HarmonyPatch(typeof(EndGameManager), nameof(EndGameManager.SetEverythingUp))]
     public static class EndGamePatch
     {
-        public static bool Prefix(EndGameManager __instance)
+        public static void Prefix(EndGameManager __instance)
         {
             if (!TempData.DidHumansWin(TempData.EndReason))
-                return true;
+                return;
 
             var winners = TempData.winners.ToArray();
             var jester = GameData.Instance.AllPlayers.ToArray().FirstOrDefault(x => x.HasPlayerRole(Role.Jester));
@@ -23,17 +23,15 @@ namespace PopeyesRolesMod.Roles.Jester
                 TempData.winners.Remove(jesterWinner);
             }
 
-            return true;
+            return;
         }
 
         public static void Postfix(EndGameManager __instance)
         {
-            System.Console.WriteLine(PlayerControl.LocalPlayer.GetPlayerData().Role);
             if (!TempData.DidHumansWin(TempData.EndReason))
                 return;
 
             var flag = PlayerControl.LocalPlayer.HasPlayerRole(Role.Jester);
-            System.Console.WriteLine(flag);
             if (!flag)
                 return;
 

@@ -18,7 +18,7 @@ namespace PopeyesRolesMod.Roles
                 if (__0.AmOwner)
                 {
                     var comp = __0.GetComponent<ShieldBehaviour>();
-                    comp.GlowShield();
+                    comp?.GlowShield();
                 }
                 return false;
             }
@@ -45,18 +45,36 @@ namespace PopeyesRolesMod.Roles
                 if (murderer.PlayerId == target.PlayerId)
                 {
                     // suicide
-                    deadPlayer.Suicide = true;
+                    var deathReasons = Properties.Resources.SuicideDeath;
+                    AddDeathReason(deadPlayer, deathReasons);
                 }
                 else
                 {
                     // normal murder
                     if (murderer.GetComponent<MorphBehaviour>())
                     {
-                        deadPlayer.WasKilledByShapeShifter = true;
+                        var deathReasons = Properties.Resources.ShapeShifterDeath;
+                        AddDeathReason(deadPlayer, deathReasons);
+                    }
+                    else if (murderer.HasPlayerRole(Role.Hunter))
+                    {
+                        var deathReasons = Properties.Resources.HunterDeath;
+                        AddDeathReason(deadPlayer, deathReasons);
+                    }
+                    else if (murderer.Data.IsImpostor)
+                    {
+                        var deathReasons = Properties.Resources.ImpostorDeath;
+                        AddDeathReason(deadPlayer, deathReasons);
                     }
                 }
-                System.Console.WriteLine(murderer.name + " murdered " + target.name);
             }
+        }
+
+        private static void AddDeathReason(DeadPlayer deadPlayer, string reasons)
+        {
+            var deathReasons = reasons.Split(";");
+            var detail = deathReasons[PopeyesRolesModPlugin.Random.Next(0, deathReasons.Length)];
+            deadPlayer.DeathDetails.Add(detail);
         }
     }
 }

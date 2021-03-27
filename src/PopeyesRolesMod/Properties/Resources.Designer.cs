@@ -61,6 +61,33 @@ namespace PopeyesRolesMod.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The victim died {0}s ago ähnelt.
+        /// </summary>
+        internal static string CorpseAge {
+            get {
+                return ResourceManager.GetString("CorpseAge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The corpse was too old to gain information from ähnelt.
+        /// </summary>
+        internal static string CorpseTooOld {
+            get {
+                return ResourceManager.GetString("CorpseTooOld", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Death Report Time Limit ähnelt.
+        /// </summary>
+        internal static string DetectiveDeathReportThreshold {
+            get {
+                return ResourceManager.GetString("DetectiveDeathReportThreshold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Create a shield to protect a [8DFFFFFF]Crewmate[] ähnelt.
         /// </summary>
         internal static string DetectiveImpostorText {
@@ -70,7 +97,7 @@ namespace PopeyesRolesMod.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Detective Options ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die [AEE1E1FF]Detective Options ähnelt.
         /// </summary>
         internal static string DetectiveOptions {
             get {
@@ -97,7 +124,7 @@ namespace PopeyesRolesMod.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Engineer Options ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die [E6B566FF]Engineer Options ähnelt.
         /// </summary>
         internal static string EngineerOptions {
             get {
@@ -111,6 +138,15 @@ namespace PopeyesRolesMod.Properties {
         internal static string EngineerRoleName {
             get {
                 return ResourceManager.GetString("EngineerRoleName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The cause of death appears to be a gun shot;Human DNA was found on the corpse ähnelt.
+        /// </summary>
+        internal static string HunterDeath {
+            get {
+                return ResourceManager.GetString("HunterDeath", resourceCulture);
             }
         }
         
@@ -133,7 +169,7 @@ namespace PopeyesRolesMod.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Hunter Options ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die [E8E9A1FF]Hunter Options ähnelt.
         /// </summary>
         internal static string HunterOptions {
             get {
@@ -147,6 +183,15 @@ namespace PopeyesRolesMod.Properties {
         internal static string HunterRoleName {
             get {
                 return ResourceManager.GetString("HunterRoleName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Traces of a non human substance were found on the corpse ähnelt.
+        /// </summary>
+        internal static string ImpostorDeath {
+            get {
+                return ResourceManager.GetString("ImpostorDeath", resourceCulture);
             }
         }
         
@@ -170,7 +215,7 @@ namespace PopeyesRolesMod.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Jester Options ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die [D09BD9FF]Jester Options ähnelt.
         /// </summary>
         internal static string JesterOptions {
             get {
@@ -198,6 +243,15 @@ namespace PopeyesRolesMod.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The attacker appears to be disguised ähnelt.
+        /// </summary>
+        internal static string ShapeShifterDeath {
+            get {
+                return ResourceManager.GetString("ShapeShifterDeath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Morph Cooldown ähnelt.
         /// </summary>
         internal static string ShapeShifterMorphCooldown {
@@ -216,7 +270,7 @@ namespace PopeyesRolesMod.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Shape Shifter Options ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die [FF1919FF]Shape Shifter Options ähnelt.
         /// </summary>
         internal static string ShapeShifterOptions {
             get {
@@ -257,6 +311,15 @@ namespace PopeyesRolesMod.Properties {
         internal static string SpawnChance {
             get {
                 return ResourceManager.GetString("SpawnChance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The victim appears to have passed away in a fight. Another body was found nearby;The cause of death appears to be suicide ähnelt.
+        /// </summary>
+        internal static string SuicideDeath {
+            get {
+                return ResourceManager.GetString("SuicideDeath", resourceCulture);
             }
         }
     }

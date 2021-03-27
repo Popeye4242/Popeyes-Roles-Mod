@@ -31,20 +31,28 @@ namespace PopeyesRolesMod.Roles
                 var canSeeColor = player.AmOwner || PlayerControl.LocalPlayer.Data.IsDead;
                 if (canSeeColor && roles.TryGetValue(player.GetPlayerData().Role, out var color))
                 {
-                    player.nameText.Color = color;
-                    if (MeetingHud.Instance != null)
-                    {
-                        foreach (PlayerVoteArea playerVoteArea in MeetingHud.Instance.playerStates)
-                        {
-                            if (playerVoteArea.NameText != null && player.PlayerId == playerVoteArea.TargetPlayerId)
-                            {
-                                playerVoteArea.NameText.Color = color;
-                            }
-                        }
-                    }
+                    SetPlayerColor(player, color);
+                }
+                else if (canSeeColor && player.Data.IsImpostor)
+                {
+                    SetPlayerColor(player, Palette.ImpostorRed);
                 }
             }
         }
 
+        private static void SetPlayerColor(PlayerControl player, Color color)
+        {
+            player.nameText.Color = color;
+            if (MeetingHud.Instance != null)
+            {
+                foreach (PlayerVoteArea playerVoteArea in MeetingHud.Instance.playerStates)
+                {
+                    if (playerVoteArea.NameText != null && player.PlayerId == playerVoteArea.TargetPlayerId)
+                    {
+                        playerVoteArea.NameText.Color = color;
+                    }
+                }
+            }
+        }
     }
 }

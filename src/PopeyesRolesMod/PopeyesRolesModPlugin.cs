@@ -14,6 +14,7 @@ namespace PopeyesRolesMod
     [BepInDependency(ReactorPlugin.Id)]
     public partial class PopeyesRolesModPlugin : BasePlugin
     {
+        public static Random Random = new Random();
         public const string Id = "dev.kynet.popeyesrolesmod";
 
         public Harmony Harmony { get; }

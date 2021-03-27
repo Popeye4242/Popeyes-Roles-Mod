@@ -29,6 +29,7 @@ namespace PopeyesRolesMod
         #region Detective
         public float DetectiveSpawnChance { get; set; }
         public bool DetectiveShieldedPlayerSeesShield { get; set; }
+        public float DetectiveDeathReportThreshold { get; set; }
         #endregion
     }
 }
