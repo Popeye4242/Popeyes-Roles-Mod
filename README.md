@@ -1,4 +1,4 @@
-# Popeyes-Roles-Mod
+# Popeyes-Roles-Mod (Pop-Mod)
 ## How to install this mod
 1. Buy Among Us on Steam Plattform (other plattforms are not supported and will not be supported)
 2. Update your Among Us on Steam to the latest version
