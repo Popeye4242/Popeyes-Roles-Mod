@@ -42,6 +42,23 @@ _____
 - Shape Shifter Morph Cooldown: 25s
 - Shape Shifter Morph Duration: 10s (cooldown does not go down while the shape shifter is disguised)
 
+# Contributing
+### Readme
+If you want to improve this readme feel free to create a pull request.
+### Code
+For now I will not accept pull requests making changes to the code base.
+### Unity Artists
+I am looking for some one who can create a (paid) Unity component for me that I can use for this mod. (DM me for more information Popeye#4242)
+### Images and Icons
+If you want to design an image or icon for this mod you may add me in discord (Popeye#4242). If I like your image or icon and will use it I'll reward you with 10€ Paypal. A link to your YouTube Channel, Discord ID (not server), **or** Freelancer Profile will be added at the end of the page for as long as your image will be used. 
+
+Currently I need following:
+- Banner for this mod (This will be the logo)
+- Hunter Kill Button
+- Detective Protect Button
+- Morphling Sample/Morph Button (as pair)
+- Engineer Repair Button
+
 # License
 This software is distributed under [`GNU GPLv3 License`](https://github.com/NotHunter101/ExtraRolesAmongUs/blob/main/LICENSE). 
 
