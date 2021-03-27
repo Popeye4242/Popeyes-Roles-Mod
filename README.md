@@ -16,7 +16,7 @@ The Detective is a role for the crewmate team. The objective of the detective is
 The Engineer is a role for the crewmate team. The objective is to fix sabotages and observe the game by using the vents. If an engineer is in a vent he cannot be killed. The engineer can fix one sabotage per entire game. 
 
 ### Shape Shifter
-The Shape Shifter is a role for the impostor team. The objective is to steal the shape of other players and thereby blaming another player.
+The Shape Shifter is a role for the impostor team. The objective is to steal the shape of other players. The Shape Shifter cannot use vents.
 
 ### Jester
 The Jester is a neutral role. The objective is to get voted out of the ship. The jester loses if he fails to get voted. 
