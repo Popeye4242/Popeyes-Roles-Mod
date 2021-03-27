@@ -1,4 +1,4 @@
-# Popeyes-Roles-Mod
+# Popeyes-Roles-Mod (Pop-Mod)
 ## How to install this mod
 1. Buy Among Us on Steam Plattform (other plattforms are not supported and will not be supported)
 2. Update your Among Us on Steam to the latest version
@@ -16,7 +16,7 @@ The Detective is a role for the crewmate team. The objective of the detective is
 The Engineer is a role for the crewmate team. The objective is to fix sabotages and observe the game by using the vents. If an engineer is in a vent he cannot be killed. The engineer can fix one sabotage per entire game. 
 
 ### Shape Shifter
-The Shape Shifter is a role for the impostor team. The objective is to steal the shape of other players and thereby blaming another player.
+The Shape Shifter is a role for the impostor team. The objective is to steal the shape of other players. The Shape Shifter cannot use vents.
 
 ### Jester
 The Jester is a neutral role. The objective is to get voted out of the ship. The jester loses if he fails to get voted. 
@@ -30,7 +30,7 @@ The Hunter is a role for the crewmate team. The objective is to kill the Jester 
 _____
 - Player Speed: 1.25
 - Kill Cooldown: 22.5s
-- Hunter Kill Cooldown: 22.5s
+- Hunter Kill Cooldown: 20.0s
 - Shape Shifter Morph Cooldown: 20s
 - Shape Shifter Morph Duration: 10s (cooldown does not go down while the shape shifter is disguised)
  
@@ -38,9 +38,26 @@ _____
 
 - Player Speed: 1.00
 - Kill Cooldown: 30s
-- Hunter Kill Cooldown: 30s
+- Hunter Kill Cooldown: 27.5s
 - Shape Shifter Morph Cooldown: 25s
 - Shape Shifter Morph Duration: 10s (cooldown does not go down while the shape shifter is disguised)
+
+# Contributing
+### Readme
+If you want to improve this readme feel free to create a pull request.
+### Code
+For now I will not accept pull requests making changes to the code base.
+### Unity Artists
+I am looking for some one who can create a (paid) Unity component for me that I can use for this mod. (DM me for more information Popeye#4242)
+### Images and Icons
+If you want to design an image or icon for this mod you may add me in discord (Popeye#4242). If I like your image or icon and will use it I'll reward you with 10€ Paypal. A link to your YouTube Channel, Discord ID (not server), **or** Freelancer Profile will be added at the end of the page for as long as your image will be used. 
+
+Currently I need following:
+- Banner for this mod (This will be the logo)
+- Hunter Kill Button
+- Detective Protect Button
+- Morphling Sample/Morph Button (as pair)
+- Engineer Repair Button
 
 # License
 This software is distributed under [`GNU GPLv3 License`](https://github.com/NotHunter101/ExtraRolesAmongUs/blob/main/LICENSE). 
