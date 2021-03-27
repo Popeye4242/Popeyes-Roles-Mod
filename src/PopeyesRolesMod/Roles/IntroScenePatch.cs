@@ -24,6 +24,7 @@ namespace PopeyesRolesMod.Roles
             if (PlayerControl.LocalPlayer.HasPlayerRole(Role.ShapeShifter))
             {
                 __instance.__this.Title.Text = Properties.Resources.ShapeShifterRoleName;
+                __instance.__this.Title.scale = 2;
                 return;
             }
             if (PlayerControl.LocalPlayer.HasPlayerRole(Role.Detective))

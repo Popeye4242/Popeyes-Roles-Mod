@@ -13,6 +13,8 @@ namespace PopeyesRolesMod.Roles.Engineer
 
         public static void CreateButton()
         {
+            if (Button != null)
+                return;
             Button = new GameplayButton(PopeyesRolesModPlugin.Assets.EngineerRepairButton, new HudPosition(GameplayButton.OffsetX, 0, HudAlignment.BottomRight));
             Button.OnClick += Button_OnClick; ;
             Button.OnUpdate += Button_OnUpdate;
@@ -26,7 +28,7 @@ namespace PopeyesRolesMod.Roles.Engineer
         private static void Button_OnUpdate(object sender, EventArgs e)
         {
             var playerData = PlayerControl.LocalPlayer.GetPlayerData();
-            Button.Visible = !(playerData?.UsedAbility ?? true) && !PlayerControl.LocalPlayer.Data.IsDead && PlayerControl.LocalPlayer.HasPlayerRole(Role.Engineer);
+            Button.Visible = playerData.Role == Role.Engineer && !playerData.UsedAbility && !PlayerControl.LocalPlayer.Data.IsDead;
             Button.Clickable = PlayerDataManager.Instance?.CurrentSabotage != null;
         }
 

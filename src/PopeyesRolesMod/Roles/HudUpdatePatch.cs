@@ -14,10 +14,10 @@ namespace PopeyesRolesMod.Roles
             if (!ShipStatus.Instance || AmongUsClient.Instance.GameState != InnerNetClient.GameStates.Started)
                 return;
 
-            UpdateJesterTasks();
+            UpdatePlayerNames();
         }
 
-        private static void UpdateJesterTasks()
+        private static void UpdatePlayerNames()
         {
             var roles = new Dictionary<Role, Color>()
             { 

@@ -2,7 +2,7 @@
   
   <PropertyGroup Label=".Net">
     <TargetFramework>netstandard2.1</TargetFramework>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Description>Popeyes Roles Mod for Among Us</Description>
     <Authors>Patrick Spiegel</Authors>
   </PropertyGroup>

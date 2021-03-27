@@ -13,6 +13,8 @@ namespace PopeyesRolesMod.Roles.Detective
 
         public static void CreateButton()
         {
+            if (Button != null)
+                return;
             Button = new GameplayButton(PopeyesRolesModPlugin.Assets.DetectiveShieldButton, new HudPosition(GameplayButton.OffsetX, 0, HudAlignment.BottomRight));
             Button.OnClick += Button_OnClick;
             Button.OnUpdate += Button_OnUpdate;
@@ -20,7 +22,8 @@ namespace PopeyesRolesMod.Roles.Detective
 
         private static void Button_OnUpdate(object sender, EventArgs e)
         {
-            Button.Visible = PlayerControl.LocalPlayer.HasPlayerRole(Role.Detective) && !PlayerControl.LocalPlayer.GetPlayerData().UsedAbility;
+            var playerData = PlayerControl.LocalPlayer.GetPlayerData();
+            Button.Visible = playerData.Role == Role.Detective && !playerData.UsedAbility;
             Button.Clickable = PlayerControl.LocalPlayer.FindClosestTarget();
 
             if (!Button.Visible)
