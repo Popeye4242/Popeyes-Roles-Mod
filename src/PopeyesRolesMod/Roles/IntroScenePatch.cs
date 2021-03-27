@@ -7,40 +7,39 @@ namespace PopeyesRolesMod.Roles
     [HarmonyPatch(typeof(IntroCutscene.CoBegin__d), nameof(IntroCutscene.CoBegin__d.MoveNext))]
     public static class IntroScenePatch
     {
-        static bool Prefix(IntroCutscene.CoBegin__d __instance)
+        static void Prefix(IntroCutscene.CoBegin__d __instance)
         {
             if (!PlayerControl.LocalPlayer.HasPlayerRole(Role.Jester))
-                return true;
+                return;
 
             var jokerTeam = new Il2CppSystem.Collections.Generic.List<PlayerControl>();
             jokerTeam.Add(PlayerControl.LocalPlayer);
             __instance.yourTeam = jokerTeam;
-            return true;
         }
 
 
 
         static void Postfix(IntroCutscene.CoBegin__d __instance)
         {
-            if (PlayerControl.LocalPlayer.HasPlayerRole(Role.Morphling))
+            if (PlayerControl.LocalPlayer.HasPlayerRole(Role.ShapeShifter))
             {
-                __instance.__this.Title.Text = Properties.Resources.MorphlingRoleName;
+                __instance.__this.Title.Text = Properties.Resources.ShapeShifterRoleName;
                 return;
             }
-            if (PlayerControl.LocalPlayer.HasPlayerRole(Role.Medic))
+            if (PlayerControl.LocalPlayer.HasPlayerRole(Role.Detective))
             {
-                __instance.__this.Title.Text = Properties.Resources.MedicRoleName;
-                __instance.__this.Title.Color = Colors.MedicColor ;
-                __instance.__this.ImpostorText.Text = Properties.Resources.MedicImpostorText;
-                __instance.__this.BackgroundBar.material.color = Colors.MedicColor;
+                __instance.__this.Title.Text = Properties.Resources.DetectiveRoleName;
+                __instance.__this.Title.Color = Colors.DetectiveColor ;
+                __instance.__this.ImpostorText.Text = Properties.Resources.DetectiveImpostorText;
+                __instance.__this.BackgroundBar.material.color = Colors.DetectiveColor;
                 return;
             }
-            if (PlayerControl.LocalPlayer.HasPlayerRole(Role.Sheriff))
+            if (PlayerControl.LocalPlayer.HasPlayerRole(Role.Hunter))
             {
-                __instance.__this.Title.Text = Properties.Resources.SheriffRoleName;
-                __instance.__this.Title.Color = Colors.SheriffColor;
-                __instance.__this.ImpostorText.Text = Properties.Resources.SheriffImpostorText;
-                __instance.__this.BackgroundBar.material.color = Colors.SheriffColor;
+                __instance.__this.Title.Text = Properties.Resources.HunterRoleName;
+                __instance.__this.Title.Color = Colors.HunterColor;
+                __instance.__this.ImpostorText.Text = Properties.Resources.HunterImpostorText;
+                __instance.__this.BackgroundBar.material.color = Colors.HunterColor;
                 return;
             }
             if (PlayerControl.LocalPlayer.HasPlayerRole(Role.Engineer))

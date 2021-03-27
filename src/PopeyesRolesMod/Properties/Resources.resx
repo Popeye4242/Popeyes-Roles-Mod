@@ -129,23 +129,27 @@
   <data name="JesterRoleName" xml:space="preserve">
     <value>Jester</value>
   </data>
-  <data name="MedicImpostorText" xml:space="preserve">
+  <data name="DetectiveImpostorText" xml:space="preserve">
     <value>Create a shield to protect a [8DFFFFFF]Crewmate[]</value>
   </data>
-  <data name="MedicRoleName" xml:space="preserve">
-    <value>Medic</value>
+  <data name="DetectiveRoleName" xml:space="preserve">
+    <value>Detective</value>
   </data>
-  <data name="MorphlingRoleName" xml:space="preserve">
-    <value>Morphling</value>
+  <data name="ShapeShifterRoleName" xml:space="preserve">
+    <value>Shape Shifter</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="popeyes_roles_mod" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\popeyes roles mod;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="SheriffImpostorText" xml:space="preserve">
+  <data name="HunterImpostorText" xml:space="preserve">
     <value>Shoot the [FF0000FF]Impostor[]</value>
   </data>
-  <data name="SheriffRoleName" xml:space="preserve">
-    <value>Sheriff</value>
+  <data name="HunterRoleName" xml:space="preserve">
+    <value>Hunter</value>
+  </data>
+  <data name="JesterFakeTasks" xml:space="preserve">
+    <value>[D09BD9FF]Fake Tasks
+[D09BD9FF]Get Voted Out</value>
   </data>
 </root>

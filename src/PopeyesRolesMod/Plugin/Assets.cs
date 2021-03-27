@@ -8,10 +8,10 @@ namespace PopeyesRolesMod
     public class Assets
     {
         public AssetBundle AssetBundle { get; set; }
-        public Sprite MedicShieldButton { get; set; }
+        public Sprite DetectiveShieldButton { get; set; }
         public Sprite EngineerRepairButton { get; set; }
-        public Sprite SheriffKillButton { get; set; }
-        public Sprite MorphlingSampleButton { get; set; }
-        public Sprite MorphlingMorphButton { get; set; }
+        public Sprite HunterKillButton { get; set; }
+        public Sprite ShapeShifterSampleButton { get; set; }
+        public Sprite ShapeShifterMorphButton { get; set; }
     }
 }

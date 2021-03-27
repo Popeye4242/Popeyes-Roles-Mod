@@ -61,6 +61,24 @@ namespace PopeyesRolesMod.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Create a shield to protect a [8DFFFFFF]Crewmate[] ähnelt.
+        /// </summary>
+        internal static string DetectiveImpostorText {
+            get {
+                return ResourceManager.GetString("DetectiveImpostorText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Detective ähnelt.
+        /// </summary>
+        internal static string DetectiveRoleName {
+            get {
+                return ResourceManager.GetString("DetectiveRoleName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Maintain important systems on the ship ähnelt.
         /// </summary>
         internal static string EngineerImpostorText {
@@ -75,6 +93,34 @@ namespace PopeyesRolesMod.Properties {
         internal static string EngineerRoleName {
             get {
                 return ResourceManager.GetString("EngineerRoleName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Shoot the [FF0000FF]Impostor[] ähnelt.
+        /// </summary>
+        internal static string HunterImpostorText {
+            get {
+                return ResourceManager.GetString("HunterImpostorText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Hunter ähnelt.
+        /// </summary>
+        internal static string HunterRoleName {
+            get {
+                return ResourceManager.GetString("HunterRoleName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die [D09BD9FF]Fake Tasks
+        ///[D09BD9FF]Get Voted Out ähnelt.
+        /// </summary>
+        internal static string JesterFakeTasks {
+            get {
+                return ResourceManager.GetString("JesterFakeTasks", resourceCulture);
             }
         }
         
@@ -97,33 +143,6 @@ namespace PopeyesRolesMod.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Create a shield to protect a [8DFFFFFF]Crewmate[] ähnelt.
-        /// </summary>
-        internal static string MedicImpostorText {
-            get {
-                return ResourceManager.GetString("MedicImpostorText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Medic ähnelt.
-        /// </summary>
-        internal static string MedicRoleName {
-            get {
-                return ResourceManager.GetString("MedicRoleName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Morphling ähnelt.
-        /// </summary>
-        internal static string MorphlingRoleName {
-            get {
-                return ResourceManager.GetString("MorphlingRoleName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
         /// </summary>
         internal static byte[] popeyes_roles_mod {
@@ -134,20 +153,11 @@ namespace PopeyesRolesMod.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Shoot the [FF0000FF]Impostor[] ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Shape Shifter ähnelt.
         /// </summary>
-        internal static string SheriffImpostorText {
+        internal static string ShapeShifterRoleName {
             get {
-                return ResourceManager.GetString("SheriffImpostorText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Sheriff ähnelt.
-        /// </summary>
-        internal static string SheriffRoleName {
-            get {
-                return ResourceManager.GetString("SheriffRoleName", resourceCulture);
+                return ResourceManager.GetString("ShapeShifterRoleName", resourceCulture);
             }
         }
     }

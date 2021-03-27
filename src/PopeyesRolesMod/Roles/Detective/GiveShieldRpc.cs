@@ -1,7 +1,7 @@
 ﻿using Hazel;
 using Reactor;
 
-namespace PopeyesRolesMod.Roles.Medic
+namespace PopeyesRolesMod.Roles.Detective
 {
     [RegisterCustomRpc]
     public class GiveShieldRpc : PlayerCustomRpc<PopeyesRolesModPlugin, byte>
@@ -17,7 +17,7 @@ namespace PopeyesRolesMod.Roles.Medic
         {
             var shieldedPlayer = PlayerDataManager.GetPlayerById(protectedId);
             PlayerDataManager.Instance.ShieldedPlayer = shieldedPlayer;
-            if (shieldedPlayer.AmOwner || PlayerControl.LocalPlayer.HasPlayerRole(Role.Medic))
+            if (shieldedPlayer.AmOwner || PlayerControl.LocalPlayer.HasPlayerRole(Role.Detective))
             {
                 shieldedPlayer.gameObject.AddComponent<ShieldBehaviour>();
             }

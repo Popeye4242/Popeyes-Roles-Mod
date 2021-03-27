@@ -9,10 +9,10 @@ namespace PopeyesRolesMod
         private void CreateButtons()
         {
             Roles.Engineer.RepairButton.CreateButton();
-            Roles.Medic.ShieldButton.CreateButton();
-            Roles.Morphling.SampleButton.CreateButton();
-            Roles.Morphling.MorphButton.CreateButton();
-            Roles.Sheriff.ShootButton.CreateButton();
+            Roles.Detective.ShieldButton.CreateButton();
+            Roles.ShapeShifter.SampleButton.CreateButton();
+            Roles.ShapeShifter.MorphButton.CreateButton();
+            Roles.Hunter.ShootButton.CreateButton();
         }
     }
 }

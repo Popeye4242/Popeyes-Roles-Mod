@@ -10,8 +10,8 @@ namespace PopeyesRolesMod
         Engineer,
         Impostor,
         Jester,
-        Medic,
-        Morphling,
-        Sheriff
+        Detective,
+        ShapeShifter,
+        Hunter
     }
 }

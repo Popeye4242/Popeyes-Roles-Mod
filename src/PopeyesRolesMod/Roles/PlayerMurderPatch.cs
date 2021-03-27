@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
-using PopeyesRolesMod.Roles.Medic;
+using PopeyesRolesMod.Roles.Detective;
+using PopeyesRolesMod.Roles.ShapeShifter;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,7 +17,6 @@ namespace PopeyesRolesMod.Roles
             {
                 if (__0.AmOwner)
                 {
-                    System.Console.WriteLine("Making it glow");
                     var comp = __0.GetComponent<ShieldBehaviour>();
                     comp.GlowShield();
                 }
@@ -27,11 +27,35 @@ namespace PopeyesRolesMod.Roles
             return true;
         }
 
-        public static void Postfix(PlayerControl __instance, PlayerControl __0)
+        public static void Postfix(PlayerControl __instance, [HarmonyArgument(0)] PlayerControl target)
         {
-            if (!__instance.HasPlayerRole(Role.Impostor) && !__instance.HasPlayerRole(Role.Morphling))
+            var murderer = __instance;
+            if (!murderer.HasPlayerRole(Role.Impostor) && !murderer.HasPlayerRole(Role.ShapeShifter))
             {
-                __instance.Data.IsImpostor = false;
+                murderer.Data.IsImpostor = false;
+            }
+            if (PlayerControl.LocalPlayer.HasPlayerRole(Role.Detective))
+            {
+                var playerData = PlayerControl.LocalPlayer.GetPlayerData();
+                var deadPlayer = new DeadPlayer();
+                deadPlayer.Player = target;
+                deadPlayer.Murderer = murderer;
+                playerData.DeadPlayers.Add(deadPlayer);
+
+                if (murderer.PlayerId == target.PlayerId)
+                {
+                    // suicide
+                    deadPlayer.Suicide = true;
+                }
+                else
+                {
+                    // normal murder
+                    if (murderer.GetComponent<MorphBehaviour>())
+                    {
+                        deadPlayer.WasKilledByShapeShifter = true;
+                    }
+                }
+                System.Console.WriteLine(murderer.name + " murdered " + target.name);
             }
         }
     }

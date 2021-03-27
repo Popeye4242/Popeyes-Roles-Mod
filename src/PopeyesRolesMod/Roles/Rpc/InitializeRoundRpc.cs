@@ -22,7 +22,6 @@ namespace PopeyesRolesMod.Roles.Rpc
             PlayerDataManager.Instance = new PlayerDataManager();
             foreach (var role in data.Roles)
             {
-                System.Console.WriteLine("Assigned {0} to player {1}({2})", role.Value, PlayerDataManager.GetPlayerById(role.Key).name, role.Key);
                 PlayerDataManager.SetPlayerRole(role.Key, role.Value);
             }
         }

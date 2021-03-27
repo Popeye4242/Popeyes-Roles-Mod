@@ -4,7 +4,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 
-namespace PopeyesRolesMod.Roles.Morphling
+namespace PopeyesRolesMod.Roles.ShapeShifter
 {
     public static class MorphButton
     {
@@ -13,7 +13,7 @@ namespace PopeyesRolesMod.Roles.Morphling
 
         public static void CreateButton()
         {
-            Button = new CooldownButton(PopeyesRolesModPlugin.Assets.MorphlingMorphButton, new HudPosition(GameplayButton.OffsetX, 1.5f, HudAlignment.BottomRight), 20f, 10f, 10f);
+            Button = new CooldownButton(PopeyesRolesModPlugin.Assets.ShapeShifterMorphButton, new HudPosition(GameplayButton.OffsetX, 1.5f, HudAlignment.BottomRight), 20f, 5f, 0f);
             Button.EffectStarted += Button_EffectStarted_Morph;
             Button.EffectEnded += Button_EffectEnded_Morph;
             Button.OnUpdate += Button_OnUpdate;
@@ -24,7 +24,7 @@ namespace PopeyesRolesMod.Roles.Morphling
             Rpc<MorphRpc>.Instance.Send(new MorphData
             {
                 Morph = false,
-                Morphling = PlayerControl.LocalPlayer.PlayerId
+                ShapeShifter = PlayerControl.LocalPlayer.PlayerId
             });
         }
 
@@ -33,14 +33,14 @@ namespace PopeyesRolesMod.Roles.Morphling
             Rpc<MorphRpc>.Instance.Send(new MorphData
             {
                 Morph = true,
-                Morphling = PlayerControl.LocalPlayer.PlayerId,
+                ShapeShifter = PlayerControl.LocalPlayer.PlayerId,
                 SampledPlayer = PlayerControl.LocalPlayer.GetPlayerData().SampledPlayer.PlayerId
             });
         }
 
         private static void Button_OnUpdate(object sender, EventArgs e)
         {
-            Button.Visible = PlayerControl.LocalPlayer.HasPlayerRole(Role.Morphling) && PlayerControl.LocalPlayer.GetPlayerData().SampledPlayer;
+            Button.Visible = PlayerControl.LocalPlayer.HasPlayerRole(Role.ShapeShifter) && PlayerControl.LocalPlayer.GetPlayerData().SampledPlayer;
             Button.Clickable = true;
 
             lastF = Input.GetKeyUp(KeyCode.F);

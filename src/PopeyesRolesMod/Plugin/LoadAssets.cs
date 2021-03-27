@@ -12,10 +12,10 @@ namespace PopeyesRolesMod
             Assets = new Assets();
             Assets.AssetBundle = AssetBundle.LoadFromMemory(Properties.Resources.popeyes_roles_mod);
             Assets.EngineerRepairButton = Assets.AssetBundle.LoadAsset<Sprite>("tools").DontUnload();
-            Assets.MedicShieldButton = Assets.AssetBundle.LoadAsset<Sprite>("medic-shield").DontUnload();
-            Assets.MorphlingMorphButton = Assets.AssetBundle.LoadAsset<Sprite>("disguise").DontUnload();
-            Assets.MorphlingSampleButton = Assets.AssetBundle.LoadAsset<Sprite>("sampling").DontUnload();
-            Assets.SheriffKillButton= Assets.AssetBundle.LoadAsset<Sprite>("gun").DontUnload();
+            Assets.DetectiveShieldButton = Assets.AssetBundle.LoadAsset<Sprite>("medic-shield").DontUnload();
+            Assets.ShapeShifterMorphButton = Assets.AssetBundle.LoadAsset<Sprite>("disguise").DontUnload();
+            Assets.ShapeShifterSampleButton = Assets.AssetBundle.LoadAsset<Sprite>("sampling").DontUnload();
+            Assets.HunterKillButton= Assets.AssetBundle.LoadAsset<Sprite>("gun").DontUnload();
         }
     }
 }

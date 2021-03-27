@@ -4,7 +4,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 
-namespace PopeyesRolesMod.Roles.Medic
+namespace PopeyesRolesMod.Roles.Detective
 {
     public static class ShieldButton
     {
@@ -13,15 +13,15 @@ namespace PopeyesRolesMod.Roles.Medic
 
         public static void CreateButton()
         {
-            Button = new GameplayButton(PopeyesRolesModPlugin.Assets.MedicShieldButton, new HudPosition(GameplayButton.OffsetX, 0, HudAlignment.BottomRight));
+            Button = new GameplayButton(PopeyesRolesModPlugin.Assets.DetectiveShieldButton, new HudPosition(GameplayButton.OffsetX, 0, HudAlignment.BottomRight));
             Button.OnClick += Button_OnClick;
             Button.OnUpdate += Button_OnUpdate;
         }
 
         private static void Button_OnUpdate(object sender, EventArgs e)
         {
-            Button.Visible=PlayerControl.LocalPlayer.HasPlayerRole(Role.Medic);
-            Button.Clickable = PlayerControl.LocalPlayer.FindClosestPlayer();
+            Button.Visible=PlayerControl.LocalPlayer.HasPlayerRole(Role.Detective);
+            Button.Clickable = PlayerControl.LocalPlayer.FindClosestTarget();
 
             lastQ = Input.GetKeyUp(KeyCode.Q);
 
@@ -32,7 +32,7 @@ namespace PopeyesRolesMod.Roles.Medic
 
         private static void Button_OnClick(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            PlayerControl target = PlayerControl.LocalPlayer.FindClosestPlayer();
+            PlayerControl target = PlayerControl.LocalPlayer.FindClosestTarget();
             if (!target)
                 return;
             Rpc<GiveShieldRpc>.Instance.Send(target.PlayerId, immediately: true);

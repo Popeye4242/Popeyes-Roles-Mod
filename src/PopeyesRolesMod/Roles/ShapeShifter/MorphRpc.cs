@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PopeyesRolesMod.Roles.Morphling
+namespace PopeyesRolesMod.Roles.ShapeShifter
 {
     [RegisterCustomRpc]
     public class MorphRpc : PlayerCustomRpc<PopeyesRolesModPlugin, MorphData>
@@ -20,14 +20,14 @@ namespace PopeyesRolesMod.Roles.Morphling
         {
             if (data.Morph)
             {
-                var morphling = PlayerDataManager.GetPlayerById(data.Morphling);
+                var morphling = PlayerDataManager.GetPlayerById(data.ShapeShifter);
                 var behaviour = morphling.gameObject.AddComponent<MorphBehaviour>();
                 behaviour.Player = morphling;
                 behaviour.SampledPlayer = PlayerDataManager.GetPlayerById(data.SampledPlayer);
             }
             else
             {
-                var morphling = PlayerDataManager.GetPlayerById(data.Morphling);
+                var morphling = PlayerDataManager.GetPlayerById(data.ShapeShifter);
                 var behaviour = morphling.gameObject.GetComponent<MorphBehaviour>();
                 behaviour.Stop();
             }

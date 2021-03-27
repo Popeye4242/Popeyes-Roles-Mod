@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-namespace PopeyesRolesMod.Roles.Morphling
+namespace PopeyesRolesMod.Roles.ShapeShifter
 {
     [RegisterInIl2Cpp]
     public class MorphBehaviour : MonoBehaviour
@@ -14,9 +14,8 @@ namespace PopeyesRolesMod.Roles.Morphling
         public PlayerControl Player { get; set; }
         public PlayerControl SampledPlayer { get; set; }
 
-        public void Update()
+        public void Start()
         {
-
             Player.nameText.Text = SampledPlayer.Data.PlayerName;
             Player.myRend.material.SetColor("_BackColor", Palette.ShadowColors[SampledPlayer.Data.ColorId]);
             Player.myRend.material.SetColor("_BodyColor", Palette.PlayerColors[SampledPlayer.Data.ColorId]);
@@ -47,6 +46,12 @@ namespace PopeyesRolesMod.Roles.Morphling
 
         internal void Stop()
         {
+            Player.SetName(Player.Data.PlayerName);
+            Player.SetHat(Player.Data.HatId, Player.Data.ColorId);
+            setSkinWithAnim(Player.MyPhysics, Player.Data.SkinId);
+            Player.SetPet(Player.Data.PetId);
+            Player.CurrentPet.Visible = Player.Visible;
+            Player.SetColor(Player.Data.ColorId);
             Destroy(this);
         }
 

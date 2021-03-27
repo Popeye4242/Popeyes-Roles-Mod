@@ -4,7 +4,7 @@ using System.Collections;
 using UnhollowerBaseLib.Attributes;
 using UnityEngine;
 
-namespace PopeyesRolesMod.Roles.Medic
+namespace PopeyesRolesMod.Roles.Detective
 {
     [RegisterInIl2Cpp]
     public class ShieldBehaviour : MonoBehaviour
@@ -17,7 +17,7 @@ namespace PopeyesRolesMod.Roles.Medic
 
         public void Update()
         {
-            SetShieldColor(Colors.MedicShieldColor);
+            SetShieldColor(Colors.DetectiveShieldColor);
         }
 
         [HideFromIl2Cpp]
@@ -37,7 +37,6 @@ namespace PopeyesRolesMod.Roles.Medic
         [HideFromIl2Cpp]
         public IEnumerator MakeGlow()
         {
-            System.Console.WriteLine("Started Co Routine");
             for (int i = 0; i < 10; i++)
             {
                 strength -= .1f;
@@ -48,7 +47,6 @@ namespace PopeyesRolesMod.Roles.Medic
                 strength += .1f;
                 yield return new WaitForSeconds(.05f);
             }
-            System.Console.WriteLine("Finished Co Routine");
         }
     }
 }

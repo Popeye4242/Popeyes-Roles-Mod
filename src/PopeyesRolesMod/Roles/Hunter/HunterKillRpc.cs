@@ -1,13 +1,13 @@
 ﻿using Hazel;
 using Reactor;
 
-namespace PopeyesRolesMod.Roles.Sheriff
+namespace PopeyesRolesMod.Roles.Hunter
 {
 
     [RegisterCustomRpc]
-    public class SheriffKillRpc : PlayerCustomRpc<PopeyesRolesModPlugin, SheriffKillRpc.OfficerKillData>
+    public class HunterKillRpc : PlayerCustomRpc<PopeyesRolesModPlugin, HunterKillRpc.OfficerKillData>
     {
-        public SheriffKillRpc(PopeyesRolesModPlugin plugin) : base(plugin)
+        public HunterKillRpc(PopeyesRolesModPlugin plugin) : base(plugin)
         {
 
         }

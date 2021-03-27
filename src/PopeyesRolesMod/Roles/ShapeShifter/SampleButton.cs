@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 
-namespace PopeyesRolesMod.Roles.Morphling
+namespace PopeyesRolesMod.Roles.ShapeShifter
 {
     public static class SampleButton
     {
@@ -12,15 +12,15 @@ namespace PopeyesRolesMod.Roles.Morphling
 
         public static void CreateButton()
         {
-            Button = new GameplayButton(PopeyesRolesModPlugin.Assets.MorphlingSampleButton, new HudPosition(GameplayButton.OffsetX, 1.5f, HudAlignment.BottomRight));
+            Button = new GameplayButton(PopeyesRolesModPlugin.Assets.ShapeShifterSampleButton, new HudPosition(GameplayButton.OffsetX, 1.5f, HudAlignment.BottomRight));
             Button.OnClick += Button_OnClick_Sample;
             Button.OnUpdate += Button_OnUpdate;
         }
 
         private static void Button_OnUpdate(object sender, EventArgs e)
         {
-            Button.Visible = PlayerControl.LocalPlayer.HasPlayerRole(Role.Morphling) && !(PlayerControl.LocalPlayer.GetPlayerData()?.SampledPlayer);
-            Button.Clickable = PlayerControl.LocalPlayer.FindClosestPlayer();
+            Button.Visible = PlayerControl.LocalPlayer.HasPlayerRole(Role.ShapeShifter) && !(PlayerControl.LocalPlayer.GetPlayerData()?.SampledPlayer);
+            Button.Clickable = PlayerControl.LocalPlayer.FindClosestTarget();
 
             lastF = Input.GetKeyUp(KeyCode.F);
 
@@ -30,7 +30,7 @@ namespace PopeyesRolesMod.Roles.Morphling
 
         private static void Button_OnClick_Sample(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            var sampledPlayer = PlayerControl.LocalPlayer.FindClosestPlayer();
+            var sampledPlayer = PlayerControl.LocalPlayer.FindClosestTarget();
             PlayerControl.LocalPlayer.GetPlayerData().SampledPlayer = sampledPlayer;
         }
     }

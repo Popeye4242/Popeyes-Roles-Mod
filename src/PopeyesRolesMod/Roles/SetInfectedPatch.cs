@@ -17,11 +17,11 @@ namespace PopeyesRolesMod.Roles
         {
             Dictionary<Role, (Team Team, int SpawnChance)> roles = new Dictionary<Role, (Team Team, int SpawnChance)>()
             {
-                { Role.Sheriff, (Team.Crewmate, SpawnChance: 100) },
+                { Role.Hunter, (Team.Crewmate, SpawnChance: 100) },
                 { Role.Jester, (Team.Neutral, SpawnChance: 100) },
-                { Role.Medic, (Team.Crewmate, SpawnChance: 100)},
-                { Role.Engineer, (Team.Crewmate, SpawnChance: 100) },
-                { Role.Morphling, (Team.Impostor, SpawnChance: 100)}
+                { Role.Detective, (Team.Crewmate, SpawnChance: 0)},
+                { Role.Engineer, (Team.Crewmate, SpawnChance: 0) },
+                { Role.ShapeShifter, (Team.Impostor, SpawnChance: 0)}
              };
 
             var data = new InitializeRoundData();
@@ -32,12 +32,9 @@ namespace PopeyesRolesMod.Roles
                 var role = roles.ElementAt(s_rand.Next(0, rc - i));
                 roles.Remove(role.Key);
 
-                System.Console.WriteLine("current role " + role.Key);
 
                 if (s_rand.Next(0, 100) > role.Value.SpawnChance)
                     continue;
-
-                System.Console.WriteLine("Spawning role");
 
                 if (role.Value.Team == Team.Impostor)
                 {

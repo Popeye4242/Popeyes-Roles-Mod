@@ -1,6 +1,8 @@
 ﻿using HarmonyLib;
+using InnerNet;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace PopeyesRolesMod.Roles
 {
@@ -9,12 +11,37 @@ namespace PopeyesRolesMod.Roles
     {
         public static void Postfix()
         {
-            if (!ShipStatus.Instance)
+            if (!ShipStatus.Instance || AmongUsClient.Instance.GameState != InnerNetClient.GameStates.Started)
                 return;
-            
-            
+
+            UpdateJesterTasks();
         }
 
+        private static void UpdateJesterTasks()
+        {
+            var roles = new Dictionary<Role, Color>()
+            {
+                { Role.Engineer, Colors.EngineerColor },
+                { Role.Detective, Colors.DetectiveColor },
+                { Role.Jester, Colors.JesterColor },
+                { Role.Hunter, Colors.HunterColor}
+            };
+            var player = PlayerControl.LocalPlayer;
+            if (roles.TryGetValue(player.GetPlayerData().Role, out var color))
+            {
+                player.nameText.Color = color;
+                if (MeetingHud.Instance != null)
+                {
+                    foreach (PlayerVoteArea playerVoteArea in MeetingHud.Instance.playerStates)
+                    {
+                        if (playerVoteArea.NameText != null && player.PlayerId == playerVoteArea.TargetPlayerId)
+                        {
+                            playerVoteArea.NameText.Color = color;
+                        }
+                    }
+                }
+            }
+        }
 
     }
 }
