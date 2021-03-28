@@ -56,7 +56,7 @@ There are currently no changes planned regarding the Hunter.
 ### Jester Role
 In a meeting where three players are left the crewmates cannot win currently. I plan to change the jester to be able to win as crew if he wins with one other crewmate. If the impostors
 ### Additional Roles
-Currently I do not plan to add additional roles to this mod. This mod is designed to have few roles to not be overly complex. If an additional role will be added then it should be a good role that improves gameplay as great as the classic roles. 
+Currently I do not plan to add additional roles to this mod. This mod is designed to have few roles to not be overly complex. If an additional role will be added then it should be a good role that improves gameplay as great as the classic roles. I am playing with the idea of adding a ghost role however.
 ### Skeld.Net
 I plan to add Skeld.Net as Custom Server Option and make it the default. Currently you need to change the server region to skeld.net by yourself. 
 ### Game Modes
