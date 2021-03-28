@@ -3,7 +3,7 @@
 1. Buy Among Us on Steam Plattform (other plattforms are not supported and will not be supported)
 2. Update your Among Us on Steam to the latest version
 3. Copy your Among Us Directory to a location of your choice
-4. Download the latest mod version from the [`releases tab`](https://github.com/Popeye4242/Popeyes-Roles-Mod/releases/)
+4. Download the latest mod version from the [`releases tab`](https://github.com/Popeye4242/Popeyes-Roles-Mod/releases/latest)
 5. Extract the content of the downloaded zip file into your copied Among Us directory
 6. Make soure you have installed Microsoft Visual C++ Redistributable https://aka.ms/vs/16/release/vc_redist.x86.exe
 7. Start Among Us. The first start will need a little bit longer than usual.
