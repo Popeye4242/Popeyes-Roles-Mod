@@ -10,6 +10,8 @@ namespace PopeyesRolesMod.Roles.Detective
     public class ShieldBehaviour : MonoBehaviour
     {
         float strength = 1f;
+        Color detectiveShieldColor = Colors.DetectiveShieldColor;
+
         public ShieldBehaviour(IntPtr value) : base(value)
         {
         }
@@ -17,14 +19,13 @@ namespace PopeyesRolesMod.Roles.Detective
 
         public void Update()
         {
-            SetShieldColor(Colors.DetectiveShieldColor);
+            SetShieldColor(detectiveShieldColor);
         }
 
         [HideFromIl2Cpp]
         private void SetShieldColor(Color color)
         {
             var myRend = gameObject.GetComponent<SpriteRenderer>();
-            myRend.material.SetColor("_VisorColor", color);
             myRend.material.SetFloat("_Outline", strength);
             myRend.material.SetColor("_OutlineColor", color);
         }
@@ -48,6 +49,36 @@ namespace PopeyesRolesMod.Roles.Detective
                 strength += .1f;
                 yield return new WaitForSeconds(.05f);
             }
+        }
+
+        public float speed = 1.0f;
+        public Color startColor = Colors.DetectiveShieldColor;
+        public Color endColor = Palette.ImpostorRed;
+        float startTime;
+
+
+        [HideFromIl2Cpp]
+        public IEnumerator DestroyShield()
+        {
+            startTime = Time.time;
+            detectiveShieldColor = Palette.ImpostorRed;
+            for (int i = 0; i < 50; i++)
+            {
+                strength += .01f;
+
+                float t = (Time.time - startTime) * speed;
+                detectiveShieldColor = Color.Lerp(startColor, endColor, t);
+                yield return new WaitForSeconds(.005f);
+            }
+            strength = 0f;
+            yield return new WaitForSeconds(.01f);
+            Destroy(this);
+        }
+
+        internal void Stop()
+        {
+            SoundManager.Instance.PlaySound(PopeyesRolesModPlugin.Assets.ShieldDisarm, false, 100f);
+            Coroutines.Start(DestroyShield());
         }
     }
 }

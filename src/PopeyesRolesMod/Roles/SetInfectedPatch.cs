@@ -14,13 +14,14 @@ namespace PopeyesRolesMod.Roles
 
         public static void Postfix()
         {
-            Dictionary<Role, (Team Team, int SpawnChance)> roles = new Dictionary<Role, (Team Team, int SpawnChance)>()
+            var cfg = PluginSingleton<PopeyesRolesModPlugin>.Instance.CreateConfig();
+            Dictionary<Role, (Team Team, float SpawnChance)> roles = new Dictionary<Role, (Team Team, float SpawnChance)>()
             {
-                { Role.Hunter, (Team.Crewmate, SpawnChance: 100) },
-                { Role.Jester, (Team.Neutral, SpawnChance: 100) },
-                { Role.Detective, (Team.Crewmate, SpawnChance: 100)},
-                { Role.Engineer, (Team.Crewmate, SpawnChance: 100) },
-                { Role.ShapeShifter, (Team.Impostor, SpawnChance: 100)}
+                { Role.Hunter, (Team.Crewmate, SpawnChance: cfg.HunterSpawnChance) },
+                { Role.Jester, (Team.Neutral, SpawnChance: cfg.JesterSpawnChance) },
+                { Role.Detective, (Team.Crewmate, SpawnChance: cfg.DetectiveSpawnChance)},
+                { Role.Engineer, (Team.Crewmate, SpawnChance: cfg.EngineerSpawnChance) },
+                { Role.ShapeShifter, (Team.Impostor, SpawnChance: cfg.ShapeShifterSpawnChance)}
              };
 
             var data = new InitializeRoundData();
@@ -32,7 +33,7 @@ namespace PopeyesRolesMod.Roles
                 roles.Remove(role.Key);
 
 
-                if (PopeyesRolesModPlugin.Random.Next(0, 100) > role.Value.SpawnChance)
+                if ((PopeyesRolesModPlugin.Random.Next(0, 1000) / 10) > role.Value.SpawnChance)
                     continue;
 
                 if (role.Value.Team == Team.Impostor)

@@ -68,6 +68,18 @@ namespace PopeyesRolesMod.Roles
                     }
                 }
             }
+            if (target.HasPlayerRole(Role.Detective))
+            {
+                PlayerDataManager.Instance.ShieldedPlayer = null;
+                foreach (var player in PlayerControl.AllPlayerControls)
+                {
+                    var shield = player.GetComponent<ShieldBehaviour>();
+                    if (shield)
+                    {
+                        shield.Stop();
+                    }
+                }
+            }
         }
 
         private static void AddDeathReason(DeadPlayer deadPlayer, string reasons)
