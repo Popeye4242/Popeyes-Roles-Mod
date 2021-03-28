@@ -42,6 +42,27 @@ _____
 - Shape Shifter Morph Cooldown: 25s
 - Shape Shifter Morph Duration: 10s (cooldown does not go down while the shape shifter is disguised)
 
+# Roadmap
+This is the roadmap of features that will be worked on near future.
+### Detective Role
+Currently the role is just a copy of the Medic role from ExtraRoles. My goal for this role is to make it more focused towards analyzing dead bodies. But unlike Extra Roles I don't want to simply drop the name of the impostor in chat. The Detective should give hints that make it easier to solve kills.
+### Engineer Role
+The Engineer can sit in the vent without consequences. I want to change the play style of the engineer a little bit to make it easier for the impostors to kill the engineer. 
+When tasks are done there is currently no reason for the engineer to leave the vent. Additionally I want to enable the Engineer to fix doors that he is close to. Fixed doors cannot bo sabotaged for a short time (similar to recently closed doors).
+### Shape Shifter Role
+The Shape Shifter code currently is mostly copied from The Other Roles. I plan to make the transitionioning of the morphing smoother instead of just being instantly there. 
+### Hunter Role
+There are currently no changes planned regarding the Hunter.
+### Jester Role
+In a meeting where three players are left the crewmates cannot win currently. I plan to change the jester to be able to win as crew if he wins with one other crewmate. If the impostors
+### Additional Roles
+Currently I do not plan to add additional roles to this mod. This mod is designed to have few roles to not be overly complex. If an additional role will be added then it should be a good role that improves gameplay as great as the classic roles. 
+### Skeld.Net
+I plan to add Skeld.Net as Custom Server Option and make it the default. Currently you need to change the server region to skeld.net by yourself. 
+### Game Modes
+I currently do plan to add a game mode to this mod which makes the impostors anonymous. 
+
+
 # Contributing
 ### Readme
 If you want to improve this readme feel free to create a pull request.
