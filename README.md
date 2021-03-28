@@ -61,7 +61,8 @@ Currently I do not plan to add additional roles to this mod. This mod is designe
 I plan to add Skeld.Net as Custom Server Option and make it the default. Currently you need to change the server region to skeld.net by yourself. 
 ### Game Modes
 I currently do plan to add a game mode to this mod which makes the impostors anonymous. 
-
+### Website
+I am currently working on a website for this mod. The goal is to display information about this mod in a better way than it is currently possible with markdown only.
 
 # Contributing
 ### Readme
