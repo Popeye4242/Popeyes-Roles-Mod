@@ -32,6 +32,7 @@ namespace PopeyesRolesMod.Roles.Detective
         internal void GlowShield()
         {
             Coroutines.Start(MakeGlow());
+            SoundManager.Instance.PlaySound(PopeyesRolesModPlugin.Assets.ShieldDisarm, false, 100f);
         }
 
         [HideFromIl2Cpp]

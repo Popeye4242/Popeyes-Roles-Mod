@@ -15,7 +15,7 @@ namespace PopeyesRolesMod.Roles.Detective
         {
             if (Button != null)
                 return;
-            Button = new GameplayButton(PopeyesRolesModPlugin.Assets.DetectiveShieldButton, new HudPosition(GameplayButton.OffsetX, 0, HudAlignment.BottomRight));
+            Button = new GameplayButton(PopeyesRolesModPlugin.Assets.Heart, new HudPosition(GameplayButton.OffsetX, 0, HudAlignment.BottomRight));
             Button.OnClick += Button_OnClick;
             Button.OnUpdate += Button_OnUpdate;
         }
@@ -43,6 +43,7 @@ namespace PopeyesRolesMod.Roles.Detective
             PlayerControl target = PlayerControl.LocalPlayer.FindClosestTarget();
             if (!target)
                 return;
+            SoundManager.Instance.PlaySound(PopeyesRolesModPlugin.Assets.ShieldGuard, false, 100f);
             PlayerControl.LocalPlayer.GetPlayerData().UsedAbility = true;
             Rpc<GiveShieldRpc>.Instance.Send(target.PlayerId, immediately: true);
         }

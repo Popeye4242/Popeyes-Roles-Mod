@@ -15,7 +15,7 @@ namespace PopeyesRolesMod.Roles.Engineer
         {
             if (Button != null)
                 return;
-            Button = new GameplayButton(PopeyesRolesModPlugin.Assets.EngineerRepairButton, new HudPosition(GameplayButton.OffsetX, 0, HudAlignment.BottomRight));
+            Button = new GameplayButton(PopeyesRolesModPlugin.Assets.Settings, new HudPosition(GameplayButton.OffsetX, 0, HudAlignment.BottomRight));
             Button.OnClick += Button_OnClick; ;
             Button.OnUpdate += Button_OnUpdate;
 
@@ -61,6 +61,7 @@ namespace PopeyesRolesMod.Roles.Engineer
                     return;
             }
             PlayerControl.LocalPlayer.GetPlayerData().UsedAbility = true;
+            SoundManager.Instance.PlaySound(PopeyesRolesModPlugin.Assets.ElectricScrewDriver, false, 200f);
         }
     }
 }

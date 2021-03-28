@@ -55,7 +55,7 @@ namespace PopeyesRolesMod
             CustomOption.AddHeader(Properties.Resources.DetectiveOptions);
             DetectiveSpawnChance = CustomOption.AddNumber("detective-spawn-chance", Properties.Resources.SpawnChance, saveValue: true, 80, 0, 100, 10);
             DetectiveShieldedPlayerSeesShield = CustomOption.AddToggle("detective-shielded-player-sees-shield", Properties.Resources.ShieldedPlayerSeesShield, saveValue: true, true);
-            DetectiveDeathReportThreshold = CustomOption.AddNumber("detective-death-report-threshold", Properties.Resources.DetectiveDeathReportThreshold, saveValue: true, 20, 0, 30, 2.5f);
+            //DetectiveDeathReportThreshold = CustomOption.AddNumber("detective-death-report-threshold", Properties.Resources.DetectiveDeathReportThreshold, saveValue: true, 20, 0, 30, 2.5f);
 
         }
         public LobbyConfig CreateConfig()
@@ -72,7 +72,7 @@ namespace PopeyesRolesMod
                 JesterSpawnChance = JesterSpawnChance.GetValue(),
                 DetectiveSpawnChance = DetectiveSpawnChance.GetValue(),
                 DetectiveShieldedPlayerSeesShield = DetectiveShieldedPlayerSeesShield.GetValue(),
-                DetectiveDeathReportThreshold = DetectiveDeathReportThreshold.GetValue()
+                DetectiveDeathReportThreshold = 20
             };
         }
     }

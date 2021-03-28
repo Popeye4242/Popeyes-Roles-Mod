@@ -18,7 +18,7 @@ namespace PopeyesRolesMod.Roles.ShapeShifter
                 Button.CooldownDuration = PlayerDataManager.Instance.Config.ShapeShifterSampleCooldown;
                 return;
             }
-            Button = new CooldownButton(PopeyesRolesModPlugin.Assets.ShapeShifterSampleButton, new HudPosition(GameplayButton.OffsetX, 1.2f, HudAlignment.BottomRight), PlayerDataManager.Instance.Config.ShapeShifterSampleCooldown, 0f, 0f);
+            Button = new CooldownButton(PopeyesRolesModPlugin.Assets.PlaceHolder, new HudPosition(GameplayButton.OffsetX, 1.2f, HudAlignment.BottomRight), PlayerDataManager.Instance.Config.ShapeShifterSampleCooldown, 0f, 0f);
             Button.OnClick += Button_OnClick_Sample;
             Button.OnUpdate += Button_OnUpdate;
         }
@@ -38,6 +38,7 @@ namespace PopeyesRolesMod.Roles.ShapeShifter
         {
             var sampledPlayer = PlayerControl.LocalPlayer.FindClosestTarget();
             PlayerControl.LocalPlayer.GetPlayerData().SampledPlayer = sampledPlayer;
+            SoundManager.Instance.PlaySound(PopeyesRolesModPlugin.Assets.SuckPop, false, 100f);
         }
     }
 }

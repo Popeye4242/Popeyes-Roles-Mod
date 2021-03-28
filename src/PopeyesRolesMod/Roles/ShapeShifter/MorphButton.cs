@@ -20,7 +20,7 @@ namespace PopeyesRolesMod.Roles.ShapeShifter
                 Button.CooldownDuration = cfg.ShapeShifterMorphCooldown;
                 return;
             }
-            Button = new CooldownButton(PopeyesRolesModPlugin.Assets.ShapeShifterMorphButton, new HudPosition(GameplayButton.OffsetX, 1.2f, HudAlignment.BottomRight), cfg.ShapeShifterMorphCooldown, cfg.ShapeShifterMorphDuration, 0f);
+            Button = new CooldownButton(PopeyesRolesModPlugin.Assets.Trophy, new HudPosition(GameplayButton.OffsetX, 1.2f, HudAlignment.BottomRight), cfg.ShapeShifterMorphCooldown, cfg.ShapeShifterMorphDuration, 0f);
             Button.EffectStarted += Button_EffectStarted_Morph;
             Button.EffectEnded += Button_EffectEnded_Morph;
             Button.OnUpdate += Button_OnUpdate;
@@ -33,6 +33,7 @@ namespace PopeyesRolesMod.Roles.ShapeShifter
                 Morph = false,
                 ShapeShifter = PlayerControl.LocalPlayer.PlayerId
             });
+            SoundManager.Instance.PlaySound(PopeyesRolesModPlugin.Assets.Swoosh, false, 100f);
         }
 
         private static void Button_EffectStarted_Morph(object sender, EventArgs e)
@@ -43,6 +44,7 @@ namespace PopeyesRolesMod.Roles.ShapeShifter
                 ShapeShifter = PlayerControl.LocalPlayer.PlayerId,
                 SampledPlayer = PlayerControl.LocalPlayer.GetPlayerData().SampledPlayer.PlayerId
             });
+            SoundManager.Instance.PlaySound(PopeyesRolesModPlugin.Assets.Swoosh, false, 100f);
         }
 
         private static void Button_OnUpdate(object sender, EventArgs e)
