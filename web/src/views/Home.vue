@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="container h-100">
     TODO: make website
   </div>
 </template>
