@@ -8,6 +8,13 @@
 6. Make soure you have installed Microsoft Visual C++ Redistributable https://aka.ms/vs/16/release/vc_redist.x86.exe
 7. Start Among Us. The first start will need a little bit longer than usual.
 
+
+## Where can I play this mod?
+### German Discord Servers
+<a href="https://discord.gg/amongusde"><img alt="among us germany" src="https://user-images.githubusercontent.com/35311793/112790170-0a0f4d80-905f-11eb-9291-f273d940e992.png" /></a>
+
+Do you want to promote your own discord server? Send me a message on discord (Popeye#4242)!
+
 ## Roles
 ### Detective
 The Detective is a role for the crewmate team. The objective of the detective is to find bodies and gather information about the corpses. The detective can guard one person per entire game which renders the target immortal for the rest of the game. The target can still get voted of the ship.
