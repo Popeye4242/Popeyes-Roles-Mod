@@ -10,6 +10,7 @@
 
 
 ## Where can I play this mod?
+I will list discord servers where you can play with mods in this list. Please respect the primary language of the discord servers. If a server is a german server please do not join unless you can speak german very well. 
 ### German Discord Servers
 <a href="https://discord.gg/amongusde"><img alt="among us germany" src="https://user-images.githubusercontent.com/35311793/112790170-0a0f4d80-905f-11eb-9291-f273d940e992.png" /></a>
 
