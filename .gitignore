@@ -364,6 +364,9 @@ FodyWeavers.xsd
 # Installer output
 Among Us/
 installer-output/
-More Roles Mod Setup-cache/
+Popeyes Roles Mod-cache/
+Setup Files/
 build/
 *.back*.aip
+steam_api.dll
+Steamworks.NET.dll

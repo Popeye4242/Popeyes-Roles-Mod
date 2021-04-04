@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PopeyesRolesMod", "PopeyesR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PopeyesModInstaller", "PopeyesModInstaller\PopeyesModInstaller.csproj", "{D29F07DC-D634-4CFA-A4D9-D6F15D1C7F4B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Installer", "Installer", "{42503F83-73BE-496F-8959-EA8EF9BF3F3C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D29F07DC-D634-4CFA-A4D9-D6F15D1C7F4B} = {42503F83-73BE-496F-8959-EA8EF9BF3F3C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D9774E20-90FF-480C-AF6E-D3D7D8559C58}
