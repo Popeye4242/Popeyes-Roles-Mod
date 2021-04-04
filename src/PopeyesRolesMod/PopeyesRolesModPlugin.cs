@@ -1,4 +1,5 @@
 ﻿using BepInEx;
+using BepInEx.Configuration;
 using BepInEx.IL2CPP;
 using Essentials;
 using Essentials.Options;
@@ -26,6 +27,10 @@ namespace PopeyesRolesMod
         public const string Id = "net.popmod";
         private const string latestRelease = "https://api.github.com/repos/popeye4242/popeyes-roles-mod/releases/latest";
 
+        public ConfigEntry<bool> Enabled { get; set; }
+        public ConfigEntry<string> Ip { get; set; }
+        public ConfigEntry<ushort> Port { get; set; }
+
         public Harmony Harmony { get; }
 
         public PopeyesRolesModPlugin()
@@ -36,8 +41,14 @@ namespace PopeyesRolesMod
 
         public override void Load()
         {
+            Enabled = Config.Bind("Server", "Enable custom Server", true);
+            Ip = Config.Bind("Server", "Ipv4 or Hostname", "31.3.2021.popmod.net");
+            Port = Config.Bind("Server", "Port", (ushort)22023);
+
             LoadAssets();
             CreateOptions();
+
+
 
             ReactorVersionShower.TextUpdated += (TextRenderer renderer) =>
             {
@@ -50,7 +61,25 @@ namespace PopeyesRolesMod
             RegisterInIl2CppAttribute.Register();
             RegisterCustomRpcAttribute.Register(this);
 
+            if (Enabled.Value) 
+                AddCustomRegion();
+
             Harmony.PatchAll();
+        }
+
+        private void AddCustomRegion()
+        {
+            ServerManager serverManager = DestroyableSingleton<ServerManager>.Instance;
+
+            var regions = new List<IRegionInfo>();
+
+            regions.Add(new DnsRegionInfo(
+                    Ip.Value, "Popeyes Server", StringNames.NoTranslation, Ip.Value, Port.Value)
+                    .Cast<IRegionInfo>());
+
+            ServerManager.DefaultRegions = regions.ToArray();
+            serverManager.AvailableRegions = regions.ToArray();
+            serverManager.SaveServers();
         }
 
         private IEnumerator CheckForUpdates(TextRenderer renderer, string version)

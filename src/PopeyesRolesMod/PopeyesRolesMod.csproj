@@ -8,8 +8,8 @@
   </PropertyGroup>
   
   <PropertyGroup Label="Reactor">
-    <GameVersion>2021.3.5s</GameVersion>
-    <Mappings>NuclearPowered/Mappings:0.2.0</Mappings>
+    <GameVersion>2021.3.31.3s</GameVersion>
+    <Mappings>NuclearPowered/Mappings:0.3.0</Mappings>
   </PropertyGroup>
   
   <PropertyGroup Label="Build">
@@ -21,11 +21,8 @@
   <ItemGroup>
     <Deobfuscate Include="$(AmongUs)\BepInEx\plugins\Reactor-$(GameVersion).dll" />
     <Deobfuscate Include="$(AmongUs)\BepInEx\plugins\Essentials-$(GameVersion).dll" />
-
-    <PackageReference Include="Reactor.OxygenFilter.MSBuild" Version="0.2.9">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference> 
+    
+    <PackageReference Include="Reactor.OxygenFilter.MSBuild" Version="0.3.0" /> 
   </ItemGroup>
 
   <ItemGroup>

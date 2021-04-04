@@ -14,6 +14,9 @@ namespace PopeyesRolesMod.Roles
             if (!ShipStatus.Instance || AmongUsClient.Instance.GameState != InnerNetClient.GameStates.Started)
                 return;
 
+            if (PlayerControl.LocalPlayer.GetPlayerData() == null)
+                return;
+
             UpdatePlayerNames();
         }
 

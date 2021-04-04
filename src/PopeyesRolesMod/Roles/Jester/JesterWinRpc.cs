@@ -1,12 +1,13 @@
 ﻿using Hazel;
 using Reactor;
+using Reactor.Networking;
 
 namespace PopeyesRolesMod.Roles.Jester
 {
-    [RegisterCustomRpc]
+    [RegisterCustomRpc(74)]
     public class JesterWinRpc : PlayerCustomRpc<PopeyesRolesModPlugin, bool>
     {
-        public JesterWinRpc(PopeyesRolesModPlugin plugin) : base(plugin)
+        public JesterWinRpc(PopeyesRolesModPlugin plugin, uint id) : base(plugin, id)
         {
 
         }

@@ -158,10 +158,10 @@
     <value>Death Report Time Limit</value>
   </data>
   <data name="DetectiveOptions" xml:space="preserve">
-    <value>[AEE1E1FF]Detective Options</value>
+    <value>[AEE1E1FF]Detective Options[]</value>
   </data>
   <data name="EngineerOptions" xml:space="preserve">
-    <value>[E6B566FF]Engineer Options</value>
+    <value>[E6B566FF]Engineer Options[]</value>
   </data>
   <data name="HunterDeath" xml:space="preserve">
     <value>The cause of death appears to be a gun shot;Human DNA was found on the corpse</value>
@@ -170,17 +170,17 @@
     <value>Kill Cooldown</value>
   </data>
   <data name="HunterOptions" xml:space="preserve">
-    <value>[E8E9A1FF]Hunter Options</value>
+    <value>[E8E9A1FF]Hunter Options[]</value>
   </data>
   <data name="ImpostorDeath" xml:space="preserve">
     <value>Traces of a non human substance were found on the corpse</value>
   </data>
   <data name="JesterFakeTasks" xml:space="preserve">
     <value>[D09BD9FF]Fake Tasks
-[D09BD9FF]Get Voted Out</value>
+[D09BD9FF]Get Voted Out[]</value>
   </data>
   <data name="JesterOptions" xml:space="preserve">
-    <value>[D09BD9FF]Jester Options</value>
+    <value>[D09BD9FF]Jester Options[]</value>
   </data>
   <data name="ShapeShifterDeath" xml:space="preserve">
     <value>The attacker appears to be disguised</value>
@@ -192,7 +192,7 @@
     <value>Morph Duration</value>
   </data>
   <data name="ShapeShifterOptions" xml:space="preserve">
-    <value>[FF1919FF]Shape Shifter Options</value>
+    <value>[FF1919FF]Shape Shifter Options[]</value>
   </data>
   <data name="ShapeShifterSampleCooldown" xml:space="preserve">
     <value>Sample Cooldown</value>

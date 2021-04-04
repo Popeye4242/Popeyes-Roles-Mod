@@ -1,5 +1,7 @@
 ﻿using Essentials.UI;
+using HarmonyLib;
 using Reactor;
+using Reactor.Networking;
 using System;
 using System.Linq;
 using UnityEngine;
@@ -50,6 +52,10 @@ namespace PopeyesRolesMod.Roles.Engineer
                     ShipStatus.Instance.RpcRepairSystem(SystemTypes.LifeSupp, 0 | 64);
                     ShipStatus.Instance.RpcRepairSystem(SystemTypes.LifeSupp, 1 | 64);
                     break;
+                case TaskTypes.StopCharles:
+                    ShipStatus.Instance.RpcRepairSystem(SystemTypes.Reactor, 16);
+                    ShipStatus.Instance.RpcRepairSystem(SystemTypes.Reactor, 17);
+                    break;
                 case TaskTypes.ResetReactor:
                     ShipStatus.Instance.RpcRepairSystem(SystemTypes.Reactor, 16);
                     break;
@@ -62,6 +68,14 @@ namespace PopeyesRolesMod.Roles.Engineer
             }
             PlayerControl.LocalPlayer.GetPlayerData().UsedAbility = true;
             SoundManager.Instance.PlaySound(PopeyesRolesModPlugin.Assets.ElectricScrewDriver, false, 200f);
+        }
+    }
+    [HarmonyPatch(typeof(ShipStatus), nameof(ShipStatus.RpcRepairSystem))]
+    public class SabotagePatch
+    {
+        public static void Postfix(SystemTypes __0, int __1)
+        {
+            System.Console.WriteLine(__0.ToString() + __1);
         }
     }
 }

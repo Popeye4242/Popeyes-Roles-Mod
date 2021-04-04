@@ -1,12 +1,13 @@
 ﻿using Hazel;
 using Reactor;
+using Reactor.Networking;
 
 namespace PopeyesRolesMod.Roles.Detective
 {
-    [RegisterCustomRpc]
+    [RegisterCustomRpc(70)]
     public class GiveShieldRpc : PlayerCustomRpc<PopeyesRolesModPlugin, byte>
     {
-        public GiveShieldRpc(PopeyesRolesModPlugin plugin) : base(plugin)
+        public GiveShieldRpc(PopeyesRolesModPlugin plugin, uint id) : base(plugin, id)
         {
 
         }

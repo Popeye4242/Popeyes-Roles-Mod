@@ -1,16 +1,17 @@
 ﻿using Hazel;
 using PopeyesRolesMod.Utility;
 using Reactor;
+using Reactor.Networking;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace PopeyesRolesMod.Roles.Rpc
 {
-    [RegisterCustomRpc]
+    [RegisterCustomRpc(75)]
     public class InitializeRoundRpc : PlayerCustomRpc<PopeyesRolesModPlugin, InitializeRoundData>
     {
-        public InitializeRoundRpc(PopeyesRolesModPlugin plugin) : base(plugin)
+        public InitializeRoundRpc(PopeyesRolesModPlugin plugin, uint id) : base(plugin, id)
         {
 
         }
@@ -30,6 +31,7 @@ namespace PopeyesRolesMod.Roles.Rpc
 
             foreach (var role in data.Roles)
             {
+                System.Console.WriteLine("Assigned {0} for {1}", role.Value, PlayerDataManager.GetPlayerById(role.Key).name);
                 PlayerDataManager.SetPlayerRole(role.Key, role.Value);
             }
         }

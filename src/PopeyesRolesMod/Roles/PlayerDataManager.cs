@@ -14,7 +14,8 @@ namespace PopeyesRolesMod.Roles
             TaskTypes.FixLights,
             TaskTypes.ResetReactor,
             TaskTypes.ResetSeismic,
-            TaskTypes.RestoreOxy
+            TaskTypes.RestoreOxy,
+            TaskTypes.StopCharles
         };
 
         internal Dictionary<byte, PlayerData> PlayerData = new Dictionary<byte, PlayerData>();

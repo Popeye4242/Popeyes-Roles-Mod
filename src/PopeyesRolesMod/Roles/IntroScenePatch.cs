@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace PopeyesRolesMod.Roles
 {
-    [HarmonyPatch(typeof(IntroCutscene.CoBegin__d), nameof(IntroCutscene.CoBegin__d.MoveNext))]
+    [HarmonyPatch(typeof(IntroCutscene._CoBegin_d__11), nameof(IntroCutscene._CoBegin_d__11.MoveNext))]
     public static class IntroScenePatch
     {
-        static void Prefix(IntroCutscene.CoBegin__d __instance)
+        static void Prefix(IntroCutscene._CoBegin_d__11 __instance)
         {
             if (!PlayerControl.LocalPlayer.HasPlayerRole(Role.Jester))
                 return;
@@ -19,7 +19,7 @@ namespace PopeyesRolesMod.Roles
 
 
 
-        static void Postfix(IntroCutscene.CoBegin__d __instance)
+        static void Postfix(IntroCutscene._CoBegin_d__11 __instance)
         {
             if (PlayerControl.LocalPlayer.HasPlayerRole(Role.ShapeShifter))
             {

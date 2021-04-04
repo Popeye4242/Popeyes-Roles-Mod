@@ -1,16 +1,17 @@
 ﻿using Hazel;
 using PopeyesRolesMod.Utility;
 using Reactor;
+using Reactor.Networking;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace PopeyesRolesMod.Roles.ShapeShifter
 {
-    [RegisterCustomRpc]
+    [RegisterCustomRpc(73)]
     public class MorphRpc : PlayerCustomRpc<PopeyesRolesModPlugin, MorphData>
     {
-        public MorphRpc(PopeyesRolesModPlugin plugin) : base(plugin)
+        public MorphRpc(PopeyesRolesModPlugin plugin, uint id) : base(plugin, id)
         {
         }
 
@@ -23,7 +24,7 @@ namespace PopeyesRolesMod.Roles.ShapeShifter
                 var morphling = PlayerDataManager.GetPlayerById(data.ShapeShifter);
                 var behaviour = morphling.gameObject.AddComponent<MorphBehaviour>();
                 behaviour.Player = morphling;
-                behaviour.SampledPlayer = PlayerDataManager.GetPlayerById(data.SampledPlayer);
+                behaviour.SampledPlayer = PlayerDataManager.GetPlayerById(data.SampledPlayer); 
             }
             else
             {

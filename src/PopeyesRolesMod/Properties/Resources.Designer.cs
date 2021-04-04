@@ -97,7 +97,7 @@ namespace PopeyesRolesMod.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die [AEE1E1FF]Detective Options ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die [AEE1E1FF]Detective Options[] ähnelt.
         /// </summary>
         internal static string DetectiveOptions {
             get {
@@ -124,7 +124,7 @@ namespace PopeyesRolesMod.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die [E6B566FF]Engineer Options ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die [E6B566FF]Engineer Options[] ähnelt.
         /// </summary>
         internal static string EngineerOptions {
             get {
@@ -169,7 +169,7 @@ namespace PopeyesRolesMod.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die [E8E9A1FF]Hunter Options ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die [E8E9A1FF]Hunter Options[] ähnelt.
         /// </summary>
         internal static string HunterOptions {
             get {
@@ -197,7 +197,7 @@ namespace PopeyesRolesMod.Properties {
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die [D09BD9FF]Fake Tasks
-        ///[D09BD9FF]Get Voted Out ähnelt.
+        ///[D09BD9FF]Get Voted Out[] ähnelt.
         /// </summary>
         internal static string JesterFakeTasks {
             get {
@@ -215,7 +215,7 @@ namespace PopeyesRolesMod.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die [D09BD9FF]Jester Options ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die [D09BD9FF]Jester Options[] ähnelt.
         /// </summary>
         internal static string JesterOptions {
             get {
@@ -270,7 +270,7 @@ namespace PopeyesRolesMod.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die [FF1919FF]Shape Shifter Options ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die [FF1919FF]Shape Shifter Options[] ähnelt.
         /// </summary>
         internal static string ShapeShifterOptions {
             get {

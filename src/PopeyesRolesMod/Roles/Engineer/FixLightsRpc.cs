@@ -1,13 +1,14 @@
 ﻿using Hazel;
 using Reactor;
+using Reactor.Networking;
 
 namespace PopeyesRolesMod.Roles.Engineer
 {
 
-    [RegisterCustomRpc]
+    [RegisterCustomRpc(71)]
     public class FixLightsRpc : PlayerCustomRpc<PopeyesRolesModPlugin, bool>
     {
-        public FixLightsRpc(PopeyesRolesModPlugin plugin) : base(plugin)
+        public FixLightsRpc(PopeyesRolesModPlugin plugin, uint id) : base(plugin, id)
         {
 
         }
