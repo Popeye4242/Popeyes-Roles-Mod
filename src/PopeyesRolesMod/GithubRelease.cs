@@ -4,7 +4,6 @@ using System.Text;
 
 namespace PopeyesRolesMod
 {
-    // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
     public class Author
     {
         public string login { get; set; }
