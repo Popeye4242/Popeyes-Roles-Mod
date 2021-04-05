@@ -95,9 +95,9 @@ This software is distributed under [`GNU GPLv3 License`](https://github.com/NotH
 
 BepInEx is distributed under [`LGPL-2.1 License`](https://github.com/BepInEx/BepInEx/blob/master/LICENSE).
 
-Reactor is distributed under [`LGPL-2.1 License`](https://github.com/NuclearPowered/Reactor/blob/master/LICENSE).  
+Reactor is distributed under [`LGPL-3 License`](https://github.com/NuclearPowered/Reactor/blob/master/LICENSE).  
 
-Reactor-Essentials is distributed under [`LGPL-2.1 License`](https://github.com/DorCoMaNdO/Reactor-Essentials/blob/master/LICENSE).
+Reactor-Essentials is distributed under [`LGPL-3 License`](https://github.com/DorCoMaNdO/Reactor-Essentials/blob/master/LICENSE).
 
 ExtraRolesAmongUs is distributed under [`GNU GPLv3 License`](https://github.com/NotHunter101/ExtraRolesAmongUs/blob/main/LICENSE). 
 
