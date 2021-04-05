@@ -45,6 +45,8 @@ namespace PopeyesModInstaller
             session.Log("Copying Among Us directory");
             var installDir = session["APPDIR"];
             var amongUsDir = session["AMONGUSDIR"];
+            session.Log("Install Directory: {0}", installDir);
+            session.Log("Among Us Directory: {0}", amongUsDir);
 
             List<string> copiedFiles = new List<string>();
             List<string> copiedDirectories = new List<string>();
@@ -54,6 +56,7 @@ namespace PopeyesModInstaller
                 var directories = Directory.GetDirectories(amongUsDir);
                 foreach (var file in files)
                 {
+                    session.Log(file);
                     var filePath = Path.Combine(installDir, Path.GetFileName(file));
                     if (!File.Exists(filePath))
                     {
@@ -80,7 +83,7 @@ namespace PopeyesModInstaller
                     Directory.Delete(directory, true);
                 }
             }
-            return ActionResult.Failure;
+            return ActionResult.Success;
         }
 
         private static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs)
