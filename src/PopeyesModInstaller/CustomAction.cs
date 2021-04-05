@@ -28,7 +28,8 @@ namespace PopeyesModInstaller
             var amongUs = new Steamworks.AppId_t(945360);
             if (!isSteamRunning || !isSteamWorksInitialized)
             {
-                return ActionResult.Failure;
+                session["AMONGUSDIR"] = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Among Us";
+                return ActionResult.Success;
             }
             Steamworks.SteamApps.GetAppInstallDir(amongUs, out string amongUsDir, 260);
             
@@ -53,7 +54,7 @@ namespace PopeyesModInstaller
                 var directories = Directory.GetDirectories(amongUsDir);
                 foreach (var file in files)
                 {
-                    var filePath = Path.Combine(amongUsDir, Path.GetFileName(file));
+                    var filePath = Path.Combine(installDir, Path.GetFileName(file));
                     if (!File.Exists(filePath))
                     {
                         File.Copy(file, filePath, false);
@@ -62,7 +63,7 @@ namespace PopeyesModInstaller
                 }
                 foreach (var directory in directories)
                 {
-                    DirectoryCopy(directory, Path.Combine(amongUsDir, Path.GetFileName(directory)), true);
+                    DirectoryCopy(directory, Path.Combine(installDir, Path.GetFileName(directory)), true);
                     copiedDirectories.Add(directory);
                 }
                 session.Log("Successfully copied Among Us Directory");
