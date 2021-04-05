@@ -1,9 +1,17 @@
 # Popeyes-Roles-Mod (Pop-Mod)
 ## How to install this mod
+### Installer
+1. Buy Among Us on Steam Plattform (other plattforms are not supported and will not be supported)
+2. Download the latest .exe from the [`release tab`](https://github.com/Popeye4242/Popeyes-Roles-Mod/releases/latest).
+3. Make sure Steam is running. The installer will try to auto detect your among us install directory. 
+4. To uninstall the mod just uninstall the program like you would with any other program.
+
+
+### Manual Install
 1. Buy Among Us on Steam Plattform (other plattforms are not supported and will not be supported)
 2. Update your Among Us on Steam to the latest version
 3. Copy your Among Us Directory to a location of your choice
-4. Download the latest mod version from the [`release tab`](https://github.com/Popeye4242/Popeyes-Roles-Mod/releases/latest)
+4. Download the latest .zip from the [`release tab`](https://github.com/Popeye4242/Popeyes-Roles-Mod/releases/latest). **DO NOT DOWNLOAD THE SOURCE CODE**
 5. Extract the content of the downloaded zip file into your copied Among Us directory
 6. Make soure you have installed Microsoft Visual C++ Redistributable https://aka.ms/vs/16/release/vc_redist.x86.exe
 7. Start Among Us. The first start will need a little bit longer than usual.
@@ -14,7 +22,7 @@ I will list discord servers where you can play with mods in this list. Please re
 ### German Discord Servers
 <a href="https://discord.gg/amongusde"><img alt="among us germany" src="https://user-images.githubusercontent.com/35311793/112790170-0a0f4d80-905f-11eb-9291-f273d940e992.png" /></a>
 
-Do you want to promote your own discord server? Send me a message on discord (Popeye#4242)!
+Do you want to promote your own discord server? Send me a message on [`Discord`](https://discord.gg/cN4H3nUrH4)!
 
 ## Roles
 ### Detective
@@ -71,23 +79,6 @@ I plan to add Skeld.Net as Custom Server Option and make it the default. Current
 I currently do plan to add a game mode to this mod which makes the impostors anonymous. 
 ### Website
 I am currently working on a website for this mod. The goal is to display information about this mod in a better way than it is currently possible with markdown only.
-
-# Contributing
-### Readme
-If you want to improve this readme feel free to create a pull request.
-### Code
-For now I will not accept pull requests making changes to the code base.
-### Unity Artists
-I am looking for some one who can create a (paid) Unity component for me that I can use for this mod. (DM me for more information Popeye#4242)
-### Images and Icons
-If you want to design an image or icon for this mod you may add me in discord (Popeye#4242). If I like your image or icon and will use it I'll reward you with 10€ Paypal. A link to your YouTube Channel, Discord ID (not server), **or** Freelancer Profile will be added at the end of the page for as long as your image will be used. 
-
-Currently I need following:
-- Banner for this mod (This will be the logo)
-- Hunter Kill Button
-- Detective Protect Button
-- Morphling Sample/Morph Button (as pair)
-- Engineer Repair Button
 
 # License
 This software is distributed under [`GNU GPLv3 License`](https://github.com/NotHunter101/ExtraRolesAmongUs/blob/main/LICENSE). 
