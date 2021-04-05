@@ -10,10 +10,10 @@ namespace PopeyesRolesMod
         private const string DISGUISE = "disguise";
         private const string SAMPLING = "sampling";
         private const string GUN = "gun";
-        private const string PLACEHOLDER = "placeholder";
-        private const string SETTINGS = "settings";
-        private const string TROPHY = "trophy";
-        private const string HEART = "heart";
+        private const string PLACEHOLDER = "placeholder_text";
+        private const string SETTINGS = "settings_text";
+        private const string TROPHY = "trophy_text";
+        private const string HEART = "heart_text";
         private const string GAME_OVER = "game-over";
         private const string SHIELD_DISARM = "322148__liamg-sfx__shield-disarm-1";
         private const string SHIELD_GUARD = "370203__nekoninja__shield-guard";

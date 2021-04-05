@@ -20,7 +20,7 @@ namespace PopeyesRolesMod.Roles.Hunter
                 Button.CooldownDuration = cfg.HunterKillCooldown;
                 return;
             }
-            Button = new CooldownButton(PopeyesRolesModPlugin.Assets.GameOver, new HudPosition(GameplayButton.OffsetX, 0, HudAlignment.BottomRight), cfg.HunterKillCooldown, 0f, 10f);
+            Button = new CooldownButton(sprite: null, new HudPosition(GameplayButton.OffsetX, 0, HudAlignment.BottomRight), cfg.HunterKillCooldown, 0f, 10f);
             Button.OnClick += Button_OnClick;
             Button.OnUpdate += Button_OnUpdate;
         }
