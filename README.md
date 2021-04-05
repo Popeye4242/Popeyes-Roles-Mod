@@ -3,8 +3,19 @@
 ### Installer
 1. Buy Among Us on Steam Plattform (other plattforms are not supported and will not be supported)
 2. Download the latest .exe from the [`release tab`](https://github.com/Popeye4242/Popeyes-Roles-Mod/releases/latest).
-3. Make sure Steam is running. The installer will try to auto detect your among us install directory. 
-4. To uninstall the mod just uninstall the program like you would with any other program.
+   - I offer two installers: One for machine wide install and one for user install. The only difference between them is that the user installer does not prompt for admin permissions.  
+4. Make sure Steam is running. The installer will try to auto detect your among us install directory. 
+5. To uninstall the mod just uninstall the program like you would with any other program.
+
+#### Safety notice
+Do not open .exe files that are not published on GitHub Releases. All of my installers are digitally signed.
+
+To check if an installer is digitally signed right click the .exe file and open the digital signature tab.
+
+The Thumbprint of my certificate currently is 46b9f26d31a4de44c5e77e48a9f6d42e49042de0 
+If it is different do not execute the file. 
+
+![image](https://user-images.githubusercontent.com/35311793/113560040-a6f35d00-9602-11eb-87e3-5daa4c11274b.png)
 
 
 ### Manual Install
