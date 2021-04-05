@@ -25,8 +25,10 @@ namespace PopeyesRolesMod
 
         private void LoadAssets()
         {
-            Assets = new Assets();
-            Assets.AssetBundle = AssetBundle.LoadFromMemory(Properties.Resources.popeyes_roles_mod);
+            Assets = new Assets
+            {
+                AssetBundle = AssetBundle.LoadFromMemory(Properties.Resources.popeyes_roles_mod)
+            };
             Assets.Tools = Assets.AssetBundle.LoadAsset<Sprite>(TOOLS).DontUnload();
             Assets.MedicShield = Assets.AssetBundle.LoadAsset<Sprite>(MEDIC_SHIELD).DontUnload();
             Assets.Disguise = Assets.AssetBundle.LoadAsset<Sprite>(DISGUISE).DontUnload();

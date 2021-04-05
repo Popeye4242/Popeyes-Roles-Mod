@@ -1,8 +1,6 @@
 ﻿using Essentials.UI;
-using Reactor;
 using Reactor.Networking;
 using System;
-using System.Linq;
 using UnityEngine;
 
 namespace PopeyesRolesMod.Roles.ShapeShifter
@@ -35,7 +33,6 @@ namespace PopeyesRolesMod.Roles.ShapeShifter
                 ShapeShifter = PlayerControl.LocalPlayer.PlayerId
             });
             SoundManager.Instance.PlaySound(PopeyesRolesModPlugin.Assets.Swoosh, false, 100f);
-            var cfg = PlayerDataManager.Instance.Config;
         }
 
         private static void Button_EffectStarted_Morph(object sender, EventArgs e)

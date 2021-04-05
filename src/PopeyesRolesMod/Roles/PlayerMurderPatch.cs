@@ -1,9 +1,6 @@
 ﻿using HarmonyLib;
 using PopeyesRolesMod.Roles.Detective;
 using PopeyesRolesMod.Roles.ShapeShifter;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace PopeyesRolesMod.Roles
 {
@@ -37,9 +34,11 @@ namespace PopeyesRolesMod.Roles
             if (PlayerControl.LocalPlayer.HasPlayerRole(Role.Detective))
             {
                 var playerData = PlayerControl.LocalPlayer.GetPlayerData();
-                var deadPlayer = new DeadPlayer();
-                deadPlayer.Player = target;
-                deadPlayer.Murderer = murderer;
+                var deadPlayer = new DeadPlayer
+                {
+                    Player = target,
+                    Murderer = murderer
+                };
                 playerData.DeadPlayers.Add(deadPlayer);
 
                 if (murderer.PlayerId == target.PlayerId)

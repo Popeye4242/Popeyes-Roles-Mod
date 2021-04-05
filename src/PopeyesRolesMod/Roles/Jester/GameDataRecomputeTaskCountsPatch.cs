@@ -1,11 +1,8 @@
 ﻿using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace PopeyesRolesMod.Roles.Jester
 {
-	[HarmonyPatch(typeof(GameData), nameof(GameData.RecomputeTaskCounts))]
+    [HarmonyPatch(typeof(GameData), nameof(GameData.RecomputeTaskCounts))]
     public class GameDataRecomputeTaskCountsPatch
     {
         public static void Postfix(GameData __instance)

@@ -1,9 +1,7 @@
 ﻿using Essentials.UI;
 using HarmonyLib;
-using Reactor;
 using Reactor.Networking;
 using System;
-using System.Linq;
 using UnityEngine;
 
 namespace PopeyesRolesMod.Roles.Engineer

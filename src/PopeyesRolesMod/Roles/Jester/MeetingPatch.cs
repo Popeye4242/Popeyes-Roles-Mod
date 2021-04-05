@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using Reactor;
 using Reactor.Networking;
 
 namespace PopeyesRolesMod.Roles.Jester

@@ -2,9 +2,6 @@
 using Newtonsoft.Json;
 using Reactor;
 using Reactor.Networking;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace PopeyesRolesMod.Roles.ShapeShifter
 {

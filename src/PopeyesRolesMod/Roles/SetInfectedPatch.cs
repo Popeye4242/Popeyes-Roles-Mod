@@ -2,10 +2,8 @@
 using PopeyesRolesMod.Roles.Rpc;
 using Reactor;
 using Reactor.Networking;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace PopeyesRolesMod.Roles
 {

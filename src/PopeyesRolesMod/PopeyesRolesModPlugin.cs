@@ -5,7 +5,6 @@ using Essentials;
 using Essentials.Options;
 using HarmonyLib;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using Reactor;
 using Reactor.Patches;
 using System;
@@ -13,9 +12,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using System.Reflection;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace PopeyesRolesMod
 {
@@ -72,11 +69,12 @@ namespace PopeyesRolesMod
         {
             ServerManager serverManager = DestroyableSingleton<ServerManager>.Instance;
 
-            var regions = new List<IRegionInfo>();
-
-            regions.Add(new DnsRegionInfo(
+            var regions = new List<IRegionInfo>
+            {
+                new DnsRegionInfo(
                     Ip.Value, "Popeyes Server", StringNames.NoTranslation, Ip.Value, Port.Value)
-                    .Cast<IRegionInfo>());
+                    .Cast<IRegionInfo>()
+            };
 
             ServerManager.DefaultRegions = regions.ToArray();
             serverManager.AvailableRegions = regions.ToArray();
@@ -88,23 +86,21 @@ namespace PopeyesRolesMod
             try
             {
 
-                using (WebClient client = new WebClient())
+                using WebClient client = new WebClient();
+                client.Headers.Add("user-agent", "Popeye4242/Popeyes-Roles-Mod");
+                string build = client.DownloadString(latestRelease);
+                var githubRelease = JsonConvert.DeserializeObject<GithubRelease>(build);
+                var tagName = githubRelease.Tag_name;
+                string githubVersion = Regex.Match(tagName, "(\\d+\\.\\d+\\.\\d+)").Value;
+                var parsedGithubVersionVersion = Version.Parse(githubVersion);
+                var parsedAssemblyVersion = Version.Parse(version);
+                if (parsedGithubVersionVersion > parsedAssemblyVersion)
                 {
-                    client.Headers.Add("user-agent", "Popeye4242/Popeyes-Roles-Mod");
-                    string build = client.DownloadString(latestRelease);
-                    var githubRelease = JsonConvert.DeserializeObject<GithubRelease>(build);
-                    var tagName = githubRelease.tag_name;
-                    string githubVersion = Regex.Match(tagName, "(\\d+\\.\\d+\\.\\d+)").Value;
-                    var parsedGithubVersionVersion = Version.Parse(githubVersion);
-                    var parsedAssemblyVersion = Version.Parse(version);
-                    if (parsedGithubVersionVersion > parsedAssemblyVersion)
-                    {
-                        renderer.Text += " ([FF1111FF]Update available[])";
-                    }
-                    else if (parsedAssemblyVersion > parsedGithubVersionVersion)
-                    {
-                        renderer.Text += " ([FF1111FF]DEV BUILD[])";
-                    }
+                    renderer.Text += " ([FF1111FF]Update available[])";
+                }
+                else if (parsedAssemblyVersion > parsedGithubVersionVersion)
+                {
+                    renderer.Text += " ([FF1111FF]DEV BUILD[])";
                 }
             }
             catch (WebException ex)

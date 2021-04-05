@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using UnityEngine;
 
 namespace PopeyesRolesMod.Roles
 {
     public class PlayerDataManager
     {
-        private List<TaskTypes> sabotageTasks = new List<TaskTypes>
+        private readonly List<TaskTypes> sabotageTasks = new List<TaskTypes>
         {
             TaskTypes.FixComms,
             TaskTypes.FixLights,

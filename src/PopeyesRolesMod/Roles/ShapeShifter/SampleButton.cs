@@ -1,7 +1,5 @@
 ﻿using Essentials.UI;
-using Reactor;
 using System;
-using System.Linq;
 using UnityEngine;
 
 namespace PopeyesRolesMod.Roles.ShapeShifter
