@@ -5,17 +5,36 @@
     <Version>1.1.0</Version>
     <Description>Popeyes Roles Mod for Among Us</Description>
     <Authors>Patrick Spiegel</Authors>
+    <Configurations>Debug;Release;Debug 2021.3.5s;Debug 2021.3.31.3s;Debug 2020.12.9s;Release 2020.12.9.s;Release 2021.3.5s;Release 2021.3.31.3s</Configurations>
   </PropertyGroup>
   
-  <PropertyGroup Label="Reactor">
-    <GameVersion>2021.3.31.3s</GameVersion>
-    <Mappings>NuclearPowered/Mappings:0.3.0</Mappings>
+    
+  <PropertyGroup Condition="$(Configuration.EndsWith('s'))">
+    <DefineConstants>$(DefineConstants);STEAM</DefineConstants>
   </PropertyGroup>
+
+  <PropertyGroup Label="Reactor">
+    <GameVersion>$([System.Text.RegularExpressions.Regex]::Match('$(Configuration)', '(\d+.*)'))</GameVersion>
+    <AmongUs>$(AmongUS)\$(GameVersion)</AmongUs>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(GameVersion)' == '2021.3.31.3s'">
+    <Mappings>NuclearPowered/Mappings:0.3.0</Mappings>
+    <DefineConstants>$(DefineConstants);S2021_3_31_3</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(GameVersion)' == '2021.3.5s'">
+    <Mappings>NuclearPowered/Mappings:0.2.0</Mappings>
+    <DefineConstants>$(DefineConstants);S2021_3_5</DefineConstants>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(GameVersion)' == '2020.12.9s'">
+    <Mappings>NuclearPowered/Mappings:0.1.3</Mappings>
+    <DefineConstants>$(DefineConstants);S2020_12_9</DefineConstants>
+  </PropertyGroup>
+  
   
   <PropertyGroup Label="Build">
     <OutputPath>..\..\build</OutputPath>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>CodeSigningCertificate.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   
   <ItemGroup>
