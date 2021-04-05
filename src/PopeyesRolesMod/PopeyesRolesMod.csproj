@@ -7,16 +7,23 @@
     <Authors>Patrick Spiegel</Authors>
     <Configurations>Debug;Release;Debug 2021.3.5s;Debug 2021.3.31.3s;Debug 2020.12.9s;Release 2020.12.9.s;Release 2021.3.5s;Release 2021.3.31.3s</Configurations>
   </PropertyGroup>
+
+  <PropertyGroup Label="Reactor">
+    <GameVersion>$([System.Text.RegularExpressions.Regex]::Match('$(Configuration)', '(\d+.*)'))</GameVersion>
+  </PropertyGroup>
   
+  <PropertyGroup Condition="Exists($(AmongUs))">
+    <AmongUs>$(AmongUS)\$(GameVersion)</AmongUs>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="!Exists('$(AmongUs)') AND Exists('$(Popmod)')">
+    <AmongUs>$(Popmod)</AmongUs>
+  </PropertyGroup>
     
   <PropertyGroup Condition="$(Configuration.EndsWith('s'))">
     <DefineConstants>$(DefineConstants);STEAM</DefineConstants>
   </PropertyGroup>
 
-  <PropertyGroup Label="Reactor">
-    <GameVersion>$([System.Text.RegularExpressions.Regex]::Match('$(Configuration)', '(\d+.*)'))</GameVersion>
-    <AmongUs>$(AmongUS)\$(GameVersion)</AmongUs>
-  </PropertyGroup>
   
   <PropertyGroup Condition="'$(GameVersion)' == '2021.3.31.3s'">
     <Mappings>NuclearPowered/Mappings:0.3.0</Mappings>
