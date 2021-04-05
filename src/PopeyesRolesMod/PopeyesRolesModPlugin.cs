@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace PopeyesRolesMod
@@ -52,8 +53,8 @@ namespace PopeyesRolesMod
 
             ReactorVersionShower.TextUpdated += (TextRenderer renderer) =>
             {
-                var version = "v" + Assembly.GetExecutingAssembly().GetName().Version.ToString(3);
-                renderer.Text += Environment.NewLine + "Popeyes Roles Mod " + version;
+                var version = Assembly.GetExecutingAssembly().GetName().Version.ToString(3);
+                renderer.Text += Environment.NewLine + "Popeyes Roles Mod v" + version;
                 Coroutines.Start(CheckForUpdates(renderer, version));
             };
 
@@ -91,11 +92,18 @@ namespace PopeyesRolesMod
                 {
                     client.Headers.Add("user-agent", "Popeye4242/Popeyes-Roles-Mod");
                     string build = client.DownloadString(latestRelease);
-                    var parsedVersion = JObject.Parse(build);
-                    var tagName = parsedVersion["tag_name"];
-                    if (!string.Equals(version, tagName.ToString()))
+                    var githubRelease = JsonConvert.DeserializeObject<GithubRelease>(build);
+                    var tagName = githubRelease.tag_name;
+                    string githubVersion = Regex.Match(tagName, "(\\d+\\.\\d+\\.\\d+)").Value;
+                    var parsedGithubVersionVersion = Version.Parse(githubVersion);
+                    var parsedAssemblyVersion = Version.Parse(version);
+                    if (parsedGithubVersionVersion > parsedAssemblyVersion)
                     {
                         renderer.Text += " ([FF1111FF]Update available[])";
+                    }
+                    else if (parsedAssemblyVersion > parsedGithubVersionVersion)
+                    {
+                        renderer.Text += " ([FF1111FF]DEV BUILD[])";
                     }
                 }
             }

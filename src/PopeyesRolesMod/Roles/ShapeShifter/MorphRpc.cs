@@ -1,5 +1,5 @@
 ﻿using Hazel;
-using PopeyesRolesMod.Utility;
+using Newtonsoft.Json;
 using Reactor;
 using Reactor.Networking;
 using System;
@@ -36,12 +36,12 @@ namespace PopeyesRolesMod.Roles.ShapeShifter
 
         public override MorphData Read(MessageReader reader)
         {
-            return BinarySerializer.Deserialize<MorphData>(reader.ReadBytesAndSize());
+            return JsonConvert.DeserializeObject<MorphData>(reader.ReadString());
         }
 
         public override void Write(MessageWriter writer, MorphData data)
         {
-            writer.WriteBytesAndSize(BinarySerializer.Serialize(data));
+            writer.Write(JsonConvert.SerializeObject(data));
         }
     }
 }

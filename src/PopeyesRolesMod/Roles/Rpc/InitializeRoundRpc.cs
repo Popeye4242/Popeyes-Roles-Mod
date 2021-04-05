@@ -1,5 +1,5 @@
 ﻿using Hazel;
-using PopeyesRolesMod.Utility;
+using Newtonsoft.Json;
 using Reactor;
 using Reactor.Networking;
 using System;
@@ -38,12 +38,12 @@ namespace PopeyesRolesMod.Roles.Rpc
 
         public override InitializeRoundData Read(MessageReader reader)
         {
-            return BinarySerializer.Deserialize<InitializeRoundData>(reader.ReadBytesAndSize());
+            return JsonConvert.DeserializeObject<InitializeRoundData>(reader.ReadString());
         }
 
         public override void Write(MessageWriter writer, InitializeRoundData data)
         {
-            writer.WriteBytesAndSize(BinarySerializer.Serialize(data));
+            writer.Write(JsonConvert.SerializeObject(data));
         }
     }
 }
