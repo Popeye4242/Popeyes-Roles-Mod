@@ -16,7 +16,7 @@
     <ROW Property="AMONGUSDIR" Value="C:\Program Files(x86)\Steam\steamapps\common\Among Us"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
     <ROW Property="ARPNOMODIFY" MultiBuildValue="DefaultBuild:1"/>
-    <ROW Property="ARPNOREPAIR" Value="1"/>
+    <ROW Property="ARPNOREPAIR" Value="1" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="ARPPRODUCTICON" Value="APPDIRAmongUs.exe" Type="8"/>
     <ROW Property="ARPSYSTEMCOMPONENT" Value="1"/>
     <ROW Property="ARPURLINFOABOUT" Value="https://github.com/Popeye4242/PopeyesRolesMod"/>
@@ -110,7 +110,6 @@
     <ROW Component="MonoPosixHelper.dll" ComponentId="{FC1F825C-3A35-4459-A030-A4D551C1E760}" Directory_="EmbedRuntime_Dir" Attributes="0" KeyPath="MonoPosixHelper.dll"/>
     <ROW Component="NewFolder" ComponentId="{9951ACD6-83EB-48CC-8DE2-53DE4BD00CC8}" Directory_="NewFolder_Dir" Attributes="0"/>
     <ROW Component="Newtonsoft.Json.dll_1" ComponentId="{2AA90095-FAAC-4E63-AA87-2D223E5F5871}" Directory_="NewFolder_Dir" Attributes="0" KeyPath="Newtonsoft.Json.dll_1"/>
-    <ROW Component="PopeyesRolesMod2021.3.31.3s.dll" ComponentId="{FC87CECD-06EE-435F-9E3D-AADD207A3AEF}" Directory_="plugins_Dir" Attributes="0" KeyPath="PopeyesRolesMod2021.3.31.3s.dll"/>
     <ROW Component="PopeyesRolesMod2021.3.31.3s.dll_1" ComponentId="{0E8255AC-E90D-4970-A0D8-54E118538DF9}" Directory_="NewFolder_Dir" Attributes="0" KeyPath="PopeyesRolesMod2021.3.31.3s.dll_1"/>
     <ROW Component="Reactor2021.3.31.3s.dll" ComponentId="{F4878E3D-6D84-416B-8065-2F13408E0891}" Directory_="plugins_Dir" Attributes="0" KeyPath="Reactor2021.3.31.3s.dll"/>
     <ROW Component="SHORTCUTDIR" ComponentId="{10640807-A721-4F67-BB0F-BB369B9FF412}" Directory_="SHORTCUTDIR" Attributes="0"/>
@@ -243,7 +242,6 @@
     <ROW File="UnhollowerBaseLib.dll" Component_="UnhollowerBaseLib.dll" FileName="UNHOLL~1.DLL|UnhollowerBaseLib.dll" Attributes="0" SourcePath="..\..\..\..\Steam\steamapps\common\Among Us - Modding Environment\2021.3.31.3s\BepInEx\core\UnhollowerBaseLib.dll" SelfReg="false"/>
     <ROW File="UnhollowerRuntimeLib.dll" Component_="UnhollowerRuntimeLib.dll" FileName="UNHOLL~2.DLL|UnhollowerRuntimeLib.dll" Attributes="0" SourcePath="..\..\..\..\Steam\steamapps\common\Among Us - Modding Environment\2021.3.31.3s\BepInEx\core\UnhollowerRuntimeLib.dll" SelfReg="false"/>
     <ROW File="Essentials2021.3.31.3s.dll" Component_="Essentials2021.3.31.3s.dll" FileName="ESSENT~1.DLL|Essentials-2021.3.31.3s.dll" Attributes="0" SourcePath="..\..\..\..\Steam\steamapps\common\Among Us - Modding Environment\2021.3.31.3s\BepInEx\plugins\Essentials-2021.3.31.3s.dll" SelfReg="false"/>
-    <ROW File="PopeyesRolesMod2021.3.31.3s.dll" Component_="PopeyesRolesMod2021.3.31.3s.dll" FileName="POPEYE~1.DLL|PopeyesRolesMod-2021.3.31.3s.dll" Attributes="0" SourcePath="..\build\netstandard2.1\reobfuscated\PopeyesRolesMod-2021.3.31.3s.dll" SelfReg="false" DigSign="true"/>
     <ROW File="Reactor2021.3.31.3s.dll" Component_="Reactor2021.3.31.3s.dll" FileName="REACTO~1.DLL|Reactor-2021.3.31.3s.dll" Attributes="0" SourcePath="..\..\..\..\Steam\steamapps\common\Among Us - Modding Environment\2021.3.31.3s\BepInEx\plugins\Reactor-2021.3.31.3s.dll" SelfReg="false"/>
     <ROW File="UnityEngine.AccessibilityModule.dll_1" Component_="UnityEngine.AccessibilityModule.dll_1" FileName="UNITYE~1.DLL|UnityEngine.AccessibilityModule.dll" Attributes="0" SourcePath="..\..\..\..\Steam\steamapps\common\Among Us - Modding Environment\2021.3.31.3s\BepInEx\unity-libs\UnityEngine.AccessibilityModule.dll" SelfReg="false"/>
     <ROW File="UnityEngine.AIModule.dll_1" Component_="UnityEngine.AIModule.dll_1" FileName="UNITYE~2.DLL|UnityEngine.AIModule.dll" Attributes="0" SourcePath="..\..\..\..\Steam\steamapps\common\Among Us - Modding Environment\2021.3.31.3s\BepInEx\unity-libs\UnityEngine.AIModule.dll" SelfReg="false"/>
@@ -362,7 +360,7 @@
     <ROW Action="AI_DetectSoftware" Sequence="151"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
-    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="1" PackageFolder="..\releases\[|ProductVersion]" Languages="en" InstallationType="2" CabsLocation="1" CompressCabs="false" UseLzma="true" LzmaMethod="2" LzmaCompressionLevel="2" PackageType="1" ExeIconPath="favicon.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="[|ProductName] v[|ProductVersion]"/>
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="1" PackageFolder="..\releases\[|ProductVersion]" Languages="en" InstallationType="2" CabsLocation="1" UseLzma="true" LzmaMethod="2" LzmaCompressionLevel="2" PackageType="1" FilesInsideExe="true" ExeIconPath="favicon.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="[|ProductName] v[|ProductVersion]"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
     <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
@@ -645,7 +643,6 @@
     <ROW Feature_="MainFeature" Component_="UnhollowerBaseLib.dll"/>
     <ROW Feature_="MainFeature" Component_="UnhollowerRuntimeLib.dll"/>
     <ROW Feature_="MainFeature" Component_="Essentials2021.3.31.3s.dll"/>
-    <ROW Feature_="MainFeature" Component_="PopeyesRolesMod2021.3.31.3s.dll"/>
     <ROW Feature_="MainFeature" Component_="Reactor2021.3.31.3s.dll"/>
     <ROW Feature_="MainFeature" Component_="AI_CustomARPName"/>
     <ROW Feature_="MainFeature" Component_="UnityEngine.AccessibilityModule.dll_1"/>
