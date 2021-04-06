@@ -6,6 +6,7 @@
     <Description>Popeyes Roles Mod for Among Us</Description>
     <Authors>Patrick Spiegel</Authors>
     <Configurations>Debug;Release</Configurations>
+    <LangVersion>9</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Label="Reactor">

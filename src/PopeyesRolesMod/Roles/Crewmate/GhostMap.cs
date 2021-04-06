@@ -14,13 +14,13 @@ namespace PopeyesRolesMod.Roles.Crewmate
 
         [HarmonyPrefix]
         [HarmonyPatch(nameof (MapBehaviour.ShowNormalMap))]
-        public static bool PrefixShowNormalMap(MapBehaviour __instance)
+        public static bool PrefixShowNormalMap()
         {
             HerePoints.Clear();
             return false;
         }
 
-        private static Dictionary<byte, SpriteRenderer> HerePoints = new Dictionary<byte, SpriteRenderer>();
+        private static readonly Dictionary<byte, SpriteRenderer> HerePoints = new Dictionary<byte, SpriteRenderer>();
 
         [HarmonyPostfix]
         [HarmonyPatch(nameof (MapBehaviour.ShowNormalMap))]
@@ -55,17 +55,9 @@ namespace PopeyesRolesMod.Roles.Crewmate
             __instance.ColorControl.SetColor(new Color(0.05f, 0.2f, 1f, 1f));
             DestroyableSingleton<HudManager>.Instance.SetHudActive(false);
         }
-
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(MapBehaviour), nameof(MapBehaviour.FixedUpdate))]
-        public static bool PrefixFixedUpdate(MapBehaviour __instance)
-        {
-            return false;
-        }
-
         [HarmonyPostfix]
         [HarmonyPatch(typeof(MapBehaviour), nameof(MapBehaviour.FixedUpdate))]
-        public static void PostfixFixedUpdate(MapBehaviour __instance)
+        public static void PostfixFixedUpdate()
         {
             if (!ShipStatus.Instance)
             {

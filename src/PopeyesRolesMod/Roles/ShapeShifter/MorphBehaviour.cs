@@ -1,5 +1,6 @@
 ﻿using Reactor;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace PopeyesRolesMod.Roles.ShapeShifter
@@ -7,6 +8,9 @@ namespace PopeyesRolesMod.Roles.ShapeShifter
     [RegisterInIl2Cpp]
     public class MorphBehaviour : MonoBehaviour
     {
+        private static readonly int BodyColor = Shader.PropertyToID("_BodyColor");
+        private static readonly int BackColor = Shader.PropertyToID("_BackColor");
+
         public MorphBehaviour(IntPtr value) : base(value)
         {
         }
@@ -17,22 +21,25 @@ namespace PopeyesRolesMod.Roles.ShapeShifter
         public void Start()
         {
             Player.nameText.Text = SampledPlayer.Data.PlayerName;
-            Player.myRend.material.SetColor("_BackColor", Palette.ShadowColors[SampledPlayer.Data.ColorId]);
-            Player.myRend.material.SetColor("_BodyColor", Palette.PlayerColors[SampledPlayer.Data.ColorId]);
+            Player.myRend.material.SetColor(BackColor, Palette.ShadowColors[SampledPlayer.Data.ColorId]);
+            Player.myRend.material.SetColor(BodyColor, Palette.PlayerColors[SampledPlayer.Data.ColorId]);
             Player.HatRenderer.SetHat(SampledPlayer.Data.HatId, SampledPlayer.Data.ColorId);
             Player.nameText.transform.localPosition = new Vector3(0f, (SampledPlayer.Data.HatId == 0U) ? 0.7f : 1.05f, -0.5f);
 
-            if (Player.MyPhysics.Skin.skin.ProdId != DestroyableSingleton<HatManager>.Instance.AllSkins[(int)SampledPlayer.Data.SkinId].ProdId)
+            var allSkins = new List<SkinData>(DestroyableSingleton<HatManager>.Instance.AllSkins.ToArray());
+            if (Player.MyPhysics.Skin.skin.ProdId != allSkins[(int)SampledPlayer.Data.SkinId].ProdId)
             {
-                setSkinWithAnim(Player.MyPhysics, SampledPlayer.Data.SkinId);
+                SetSkinWithAnim(Player.MyPhysics, SampledPlayer.Data.SkinId);
             }
-            if (Player.CurrentPet == null || Player.CurrentPet.ProdId != DestroyableSingleton<HatManager>.Instance.AllPets[(int)SampledPlayer.Data.PetId].ProdId)
+
+            var allPets = new List<PetBehaviour>(DestroyableSingleton<HatManager>.Instance.AllPets.ToArray());
+            if (Player.CurrentPet == null || Player.CurrentPet.ProdId != allPets[(int)SampledPlayer.Data.PetId].ProdId)
             {
                 if (Player.CurrentPet)
                 {
                     Destroy(Player.CurrentPet.gameObject);
                 }
-                Player.CurrentPet = Instantiate(DestroyableSingleton<HatManager>.Instance.AllPets[(int)SampledPlayer.Data.PetId]);
+                Player.CurrentPet = Instantiate(allPets[(int)SampledPlayer.Data.PetId]);
                 Player.CurrentPet.transform.position = Player.transform.position;
                 Player.CurrentPet.Source = Player;
                 Player.CurrentPet.Visible = Player.Visible;
@@ -48,16 +55,17 @@ namespace PopeyesRolesMod.Roles.ShapeShifter
         {
             Player.SetName(Player.Data.PlayerName);
             Player.SetHat(Player.Data.HatId, Player.Data.ColorId);
-            setSkinWithAnim(Player.MyPhysics, Player.Data.SkinId);
+            SetSkinWithAnim(Player.MyPhysics, Player.Data.SkinId);
             Player.SetPet(Player.Data.PetId);
             Player.CurrentPet.Visible = Player.Visible;
             Player.SetColor(Player.Data.ColorId);
             Destroy(this);
         }
 
-        public static void setSkinWithAnim(PlayerPhysics playerPhysics, uint skinId)
+        private static void SetSkinWithAnim(PlayerPhysics playerPhysics, uint skinId)
         {
-            SkinData nextSkin = DestroyableSingleton<HatManager>.Instance.AllSkins[(int)skinId];
+            var allSkins = new List<SkinData>(DestroyableSingleton<HatManager>.Instance.AllSkins.ToArray());
+            SkinData nextSkin = allSkins[(int)skinId];
             AnimationClip clip = null;
             var spriteAnim = playerPhysics.Skin.animator;
             var anim = spriteAnim.m_animator;

@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using System.Collections.Generic;
+using HarmonyLib;
 
 namespace PopeyesRolesMod.Roles.Jester
 {
@@ -10,9 +11,8 @@ namespace PopeyesRolesMod.Roles.Jester
 			var gameData = __instance;
 			gameData.TotalTasks = 0;
 			gameData.CompletedTasks = 0;
-			for (int i = 0; i < gameData.AllPlayers.Count; i++)
+            foreach (var playerInfo in gameData.AllPlayers)
             {
-                GameData.PlayerInfo playerInfo = gameData.AllPlayers[i];
                 if (playerInfo.Disconnected || playerInfo.Tasks == null || !playerInfo.Object || !PlayerControl.GameOptions.GhostsDoTasks && playerInfo.IsDead)
                 {
                     continue;
@@ -23,10 +23,10 @@ namespace PopeyesRolesMod.Roles.Jester
                     continue;
                 }
 
-                for (int j = 0; j < playerInfo.Tasks.Count; j++)
+                foreach (var taskInfo in playerInfo.Tasks)
                 {
                     gameData.TotalTasks++;
-                    if (playerInfo.Tasks[j].Complete)
+                    if (taskInfo.Complete)
                     {
                         gameData.CompletedTasks++;
                     }

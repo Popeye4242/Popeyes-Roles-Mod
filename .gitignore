@@ -371,3 +371,4 @@ build/
 steam_api.dll
 Steamworks.NET.dll
 releases/
+.idea/
