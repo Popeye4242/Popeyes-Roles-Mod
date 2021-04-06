@@ -23,10 +23,10 @@
     <ROW Property="AppLogoIcon" Value="applogoicon" MultiBuildValue="DefaultBuild:unicorn.png" Type="1" MsiKey="AppLogoIcon"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="Popeye4242"/>
-    <ROW Property="ProductCode" Value="1033:{0772A78A-6B73-4081-B617-1389B3C4CAB7} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{69E6EE42-E664-4150-822B-5C9A0CCBEC71} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Popeyes Roles Mod"/>
-    <ROW Property="ProductVersion" Value="1.1.0" Type="32"/>
+    <ROW Property="ProductVersion" Value="1.1.1" Type="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{D4EF24B5-449D-4AAB-A938-DCABD887D43B}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -70,7 +70,7 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="A918597FE054CCCB65ABDBA0AD8F63C" ComponentId="{DA6D3E35-8163-447C-8B37-4A6CD20A071F}" Directory_="APPDIR" Attributes="4" KeyPath="A918597FE054CCCB65ABDBA0AD8F63C" Options="2"/>
-    <ROW Component="AI_CustomARPName" ComponentId="{9F177B68-7299-415F-8226-98619F9E2780}" Directory_="APPDIR" Attributes="4" KeyPath="DisplayName" Options="1"/>
+    <ROW Component="AI_CustomARPName" ComponentId="{166E70B9-1B53-4A16-913A-037AAC0C303F}" Directory_="APPDIR" Attributes="4" KeyPath="DisplayName" Options="1"/>
     <ROW Component="AI_DisableModify" ComponentId="{0844A3F4-0E08-456C-A056-B1368B895480}" Directory_="APPDIR" Attributes="4" KeyPath="NoModify" Options="1"/>
     <ROW Component="AI_ExePath" ComponentId="{C38CE682-74AB-4A22-969D-2060BAC1EA1D}" Directory_="APPDIR" Attributes="4" KeyPath="AI_ExePath"/>
     <ROW Component="APPDIR" ComponentId="{F5D1D145-CD29-4715-9B98-B934D5DF0123}" Directory_="APPDIR" Attributes="0"/>
@@ -916,7 +916,7 @@
     <ROW XmlAttribute="xsischemaLocation" XmlElement="swidsoftware_identification_tag" Name="xsi:schemaLocation" Flags="14" Order="3" Value="http://standards.iso.org/iso/19770/-2/2008/schema.xsd software_identification_tag.xsd"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.XmlElementComponent">
-    <ROW XmlElement="swidbuild" ParentElement="swidnumeric" Name="swid:build" Condition="1" Order="2" Flags="14" Text="0" UpdateIndexInParent="0"/>
+    <ROW XmlElement="swidbuild" ParentElement="swidnumeric" Name="swid:build" Condition="1" Order="2" Flags="14" Text="1" UpdateIndexInParent="0"/>
     <ROW XmlElement="swidentitlement_required_indicator" ParentElement="swidsoftware_identification_tag" Name="swid:entitlement_required_indicator" Condition="1" Order="0" Flags="14" Text="false" UpdateIndexInParent="0"/>
     <ROW XmlElement="swidmajor" ParentElement="swidnumeric" Name="swid:major" Condition="1" Order="0" Flags="14" Text="1" UpdateIndexInParent="0"/>
     <ROW XmlElement="swidminor" ParentElement="swidnumeric" Name="swid:minor" Condition="1" Order="1" Flags="14" Text="1" UpdateIndexInParent="0"/>

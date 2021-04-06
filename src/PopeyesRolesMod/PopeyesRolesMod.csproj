@@ -2,14 +2,15 @@
   
   <PropertyGroup Label=".Net">
     <TargetFramework>netstandard2.1</TargetFramework>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <Description>Popeyes Roles Mod for Among Us</Description>
     <Authors>Patrick Spiegel</Authors>
-    <Configurations>Debug;Release;Debug 2021.3.5s;Debug 2021.3.31.3s;Debug 2020.12.9s;Release 2020.12.9.s;Release 2021.3.5s;Release 2021.3.31.3s</Configurations>
+    <Configurations>Debug;Release</Configurations>
   </PropertyGroup>
 
   <PropertyGroup Label="Reactor">
-    <GameVersion>$([System.Text.RegularExpressions.Regex]::Match('$(Configuration)', '(\d+.*)'))</GameVersion>
+    <!--<GameVersion>$([System.Text.RegularExpressions.Regex]::Match('$(Configuration)', '(\d+.*)'))</GameVersion>-->
+    <GameVersion>2021.3.31.3s</GameVersion>
   </PropertyGroup>
   
   <PropertyGroup Condition="Exists($(AmongUs))">
@@ -64,11 +65,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-
-  <ItemGroup>
-    <Folder Include="Roles\Crewmate\" />
   </ItemGroup>
 
   <Target Name="Copy" AfterTargets="Reobfuscate" Condition="$(Configuration.StartsWith('Debug'))">
