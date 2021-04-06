@@ -69,12 +69,11 @@ namespace PopeyesRolesMod
         {
             ServerManager serverManager = DestroyableSingleton<ServerManager>.Instance;
 
-            var regions = new List<IRegionInfo>
-            {
-                new DnsRegionInfo(
-                    Ip.Value, "Popeyes Server", StringNames.NoTranslation, Ip.Value, Port.Value)
-                    .Cast<IRegionInfo>()
-            };
+            var regions = new List<IRegionInfo>(ServerManager.DefaultRegions);
+            // regions.Add(
+            //     new DnsRegionInfo(
+            //             Ip.Value, "Popeyes Server", StringNames.NoTranslation, Ip.Value, Port.Value)
+            //         .Cast<IRegionInfo>());
 
             ServerManager.DefaultRegions = regions.ToArray();
             serverManager.AvailableRegions = regions.ToArray();

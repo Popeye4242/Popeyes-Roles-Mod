@@ -69,6 +69,6 @@
   </ItemGroup>
 
   <Target Name="Copy" AfterTargets="Reobfuscate" Condition="$(Configuration.StartsWith('Debug'))">
-    <Copy SourceFiles="$(OutputPath)reobfuscated/$(AssemblyName)-$(GameVersion).dll" DestinationFolder="$(AmongUs)/BepInEx/plugins/" />
+    <Copy SourceFiles="$(OutputPath)reobfuscated/$(AssemblyName)-$(GameVersion).dll" DestinationFolder="$(AmongUs)/BepInEx/plugins/Popeyes Roles Mod/" />
   </Target>
 </Project>
