@@ -5,8 +5,8 @@
     <Version>1.1.1</Version>
     <Description>Popeyes Roles Mod for Among Us</Description>
     <Authors>Patrick Spiegel</Authors>
-    <Configurations>Debug;Release</Configurations>
-    <LangVersion>9</LangVersion>
+    <Configurations>Release</Configurations>
+    <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
 
   <PropertyGroup Label="Reactor">
@@ -23,8 +23,6 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <Deobfuscate Include="$(AmongUs)\BepInEx\plugins\Reactor-$(GameVersion).dll" />
-    <Deobfuscate Include="$(AmongUs)\BepInEx\plugins\Essentials-$(GameVersion).dll" />
     <PackageReference Include="Reactor.OxygenFilter.MSBuild" Version="0.3.0" /> 
   </ItemGroup>
   
@@ -44,7 +42,13 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <Target Name="Copy" AfterTargets="Reobfuscate" Condition="$(Configuration.StartsWith('Debug'))">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Essentials\Essentials\Essentials.csproj" />
+    <ProjectReference Include="..\Reactor\Reactor\Reactor.csproj" />
+  </ItemGroup>
+
+  <Target Name="Copy" AfterTargets="Reobfuscate">
     <Copy SourceFiles="$(OutputPath)reobfuscated/$(AssemblyName)-$(GameVersion).dll" DestinationFolder="$(AmongUs)/BepInEx/plugins/Popeyes Roles Mod/" />
   </Target>
 </Project>

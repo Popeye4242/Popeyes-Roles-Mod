@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PopeyesModInstaller", "Pope
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Installer", "Installer", "{42503F83-73BE-496F-8959-EA8EF9BF3F3C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Essentials", "Essentials\Essentials\Essentials.csproj", "{70814B52-DEE1-425A-BDE4-35A5D322AAAC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reactor", "Reactor\Reactor\Reactor.csproj", "{428D985E-F852-4EF8-933C-0E4943F89BDA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,8 +33,25 @@ Global
 		{D29F07DC-D634-4CFA-A4D9-D6F15D1C7F4B}.Debug|x86.ActiveCfg = Debug|x86
 		{D29F07DC-D634-4CFA-A4D9-D6F15D1C7F4B}.Debug|x86.Build.0 = Debug|x86
 		{D29F07DC-D634-4CFA-A4D9-D6F15D1C7F4B}.Release|Any CPU.ActiveCfg = Release|x86
+		{D29F07DC-D634-4CFA-A4D9-D6F15D1C7F4B}.Release|Any CPU.Build.0 = Release|x86
 		{D29F07DC-D634-4CFA-A4D9-D6F15D1C7F4B}.Release|x86.ActiveCfg = Release|x86
 		{D29F07DC-D634-4CFA-A4D9-D6F15D1C7F4B}.Release|x86.Build.0 = Release|x86
+		{70814B52-DEE1-425A-BDE4-35A5D322AAAC}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{70814B52-DEE1-425A-BDE4-35A5D322AAAC}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{70814B52-DEE1-425A-BDE4-35A5D322AAAC}.Debug|x86.ActiveCfg = Release|Any CPU
+		{70814B52-DEE1-425A-BDE4-35A5D322AAAC}.Debug|x86.Build.0 = Release|Any CPU
+		{70814B52-DEE1-425A-BDE4-35A5D322AAAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70814B52-DEE1-425A-BDE4-35A5D322AAAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70814B52-DEE1-425A-BDE4-35A5D322AAAC}.Release|x86.ActiveCfg = Release|Any CPU
+		{70814B52-DEE1-425A-BDE4-35A5D322AAAC}.Release|x86.Build.0 = Release|Any CPU
+		{428D985E-F852-4EF8-933C-0E4943F89BDA}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{428D985E-F852-4EF8-933C-0E4943F89BDA}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{428D985E-F852-4EF8-933C-0E4943F89BDA}.Debug|x86.ActiveCfg = Release|Any CPU
+		{428D985E-F852-4EF8-933C-0E4943F89BDA}.Debug|x86.Build.0 = Release|Any CPU
+		{428D985E-F852-4EF8-933C-0E4943F89BDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{428D985E-F852-4EF8-933C-0E4943F89BDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{428D985E-F852-4EF8-933C-0E4943F89BDA}.Release|x86.ActiveCfg = Release|Any CPU
+		{428D985E-F852-4EF8-933C-0E4943F89BDA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

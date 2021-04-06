@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+
+        <LangVersion>latest</LangVersion>
+        
+
+        <VersionPrefix>0.4.0</VersionPrefix>
+        <VersionSuffix>dev</VersionSuffix>
+        <Description>Core mod and API for Among Us</Description>
+        <Authors>NuclearPowered</Authors>
+        <Configurations>Release</Configurations>
+        <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="Assets\**\*" />
+    </ItemGroup>
+
+    <PropertyGroup Condition="'$(GamePlatform)' == 'Steam'">
+        <Mappings>NuclearPowered/Mappings:0.3.0</Mappings>
+        <GameVersion>2021.3.31.3s</GameVersion>
+        <DefineConstants>$(DefineConstants);STEAM</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(GamePlatform)' == 'Itch'">
+        <GameVersion>2021.3.5i</GameVersion>
+        <Mappings>NuclearPowered/Mappings:0.2.0</Mappings>
+        <DefineConstants>$(DefineConstants);ITCH</DefineConstants>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Reactor.OxygenFilter.MSBuild" Version="0.3.0" />
+    </ItemGroup>
+
+    <Target Name="Copy" AfterTargets="Reobfuscate">
+        <Copy SourceFiles="$(OutputPath)reobfuscated/$(AssemblyName)-$(GameVersion).dll" DestinationFolder="$(AmongUs)/BepInEx/plugins/" />
+    </Target>
+</Project>

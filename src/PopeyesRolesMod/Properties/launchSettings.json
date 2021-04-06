@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "PopeyesRolesMod": {
+      "commandName": "Executable",
+      "executablePath": "$(AmongUs)\\Among Us.exe"
+    }
+  }
+}
